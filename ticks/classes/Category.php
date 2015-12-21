@@ -21,7 +21,7 @@ class Category{
 			$category_name = $row_category['category_name'];
 			$category_description = $row_category['category_description'];
 			$category_slug = $row_category['category_slug'];
-			$all_categories[] = array('category_id'=>$category_id, 'category_name'=>$category_name);
+			$all_categories[] = array('category_id'=>$category_id, 'category_name'=>$category_name, 'category_description'=>$category_description, 'category_slug'=>$category_slug);
 		}
 
 		return $all_categories;
