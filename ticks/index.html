@@ -18,24 +18,61 @@
     $(function(){
         $('#tickstream_content').load('http://widroverse.localhost/ticks/loader.php?action=get_tickstream');
     });
+
+
+
 jQuery(document).ready(function($){ //fire on DOM ready
 
     $('#insert_click_form_button').click(function() { 
 	  //insert_tick_name
-	  alert('insert_tick_name');
+	  var insert_tick_name = $('#insert_tick_name').val();
+	  alert(insert_tick_name);
 
         $.ajax({
             url: 'loader.php?action=insert_tick',
             type: 'POST',
-            data: {'submit':true}, // An object with the key 'submit' and value 'true;
+            data: {'submit':true, 'tick_name':insert_tick_name}, // An object with the key 'submit' and value 'true;
             success: function (result) {
               alert("Your bookmark has been saved");
             }
         });  
-
-
-
     });
+
+
+
+    $('#activeitem_book').click(function() { 
+        $.ajax({
+            url: 'loader.php?action=insert_tick',
+            type: 'POST',
+            data: {'submit':true, 'tick_name':'chapter complete'}, // An object with the key 'submit' and value 'true;
+            success: function (result) {
+              alert("Your bookmark has been saved");
+            }
+        });  
+    });
+
+
+
+    $('#activeitem_videogame').click(function() { 
+        $.ajax({
+            url: 'loader.php?action=insert_tick',
+            type: 'POST',
+            data: {'submit':true, 'tick_name':'level complete'}, // An object with the key 'submit' and value 'true;
+            success: function (result) {
+              alert("Your bookmark has been saved");
+            }
+        });  
+    });
+
+
+
+
+
+
+
+
+
+
 
 });
 
@@ -259,11 +296,11 @@ a.nav-link, a.navbar-brand{
 			<div class="col-lg-3 main_bottom_thisweek">
 				<h3>Active Items</h3>
 
-				<img src="images/disease-delusion-book-cover.jpg" class="img-responsive">
+				<img src="images/disease-delusion-book-cover.jpg" class="img-responsive" id="activeitem_book" style="cursor:pointer;">
 
 				<br><br>
 
-				<img src="images/zeldawindwakerhdwiiu.jpg" class="img-responsive">
+				<img src="images/zeldawindwakerhdwiiu.jpg" class="img-responsive" id="activeitem_videogame" style="cursor:pointer;">
 
 				<br><br>
 

@@ -36,11 +36,29 @@ if($action=="insert_tick"){
 	$tick_date = date("Y-m-d");
 
 	$sql_insert_tick = "
-	insert into ticks (tick_name, tick_date, category_id, tag) VALUES ('ddddddddddddddd','$tick_date','1','xxxx')
+	insert into ticks (tick_name, tick_date, category_id, tag) VALUES ('$tick_name','$tick_date','1','xxxx')
 	";
 
 	$result_insert_tick = mysql_query($sql_insert_tick);
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
