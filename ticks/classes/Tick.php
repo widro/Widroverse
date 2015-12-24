@@ -2,7 +2,7 @@
 
 include('config/dbconnect.php');
 
-class Category{
+class Tick{
 
 
 	function list_ticks(){
@@ -26,7 +26,7 @@ class Category{
 			$all_ticks[] = array('tick_id'=>$tick_id, 'tick_name'=>$tick_name, 'tick_date'=>$tick_date, 'category_id'=>$category_id, 'active_id'=>$active_id);
 		}
 
-		return $all_categories;
+		return $all_ticks;
 	}
 
 
