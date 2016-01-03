@@ -1,6 +1,7 @@
 <?php
 
 include('classes/Book.php');
+include('classes/Game.php');
 include('classes/Category.php');
 include('classes/Inventory.php');
 include('classes/Tick.php');
@@ -115,7 +116,23 @@ if($action=="get_active_books"){
 		$status = $thisbook['status'];
 
 		echo'
-			<img src="'.$book_image.'" class="img-responsive activeitem_book" id="book_id'.$book_id.'" style="cursor:pointer;" alt="'.$book_name.'"><br><br>
+			<img src="'.$book_image.'" class="img-responsive activeitem_book" id="book_id'.$book_id.'" style="cursor:pointer;" alt="'.$book_name.'" width=100><br><br>
+			';
+	}
+}
+
+if($action=="get_active_games"){
+	$game = new Game;
+	$allgames = $game->list_games();
+
+	foreach($allgames as $thisgame){
+		$game_id = $thisgame['game_id'];
+		$game_name = $thisgame['game_name'];
+		$game_image = $thisgame['game_image'];
+		$status = $thisgame['status'];
+
+		echo'
+			<img src="'.$game_image.'" class="img-responsive activeitem_game" id="game_id'.$game_id.'" style="cursor:pointer;" alt="'.$game_name.'" width=100><br><br>
 			';
 	}
 }

@@ -31,6 +31,10 @@
     });
 
     $(function(){
+        $('#active_games_content').load('http://widroverse.localhost/ticks/loader.php?action=get_active_games');
+    });
+
+    $(function(){
         $('#active_inventory').load('http://widroverse.localhost/ticks/loader.php?action=get_inventory');
     });
 
@@ -77,16 +81,23 @@ jQuery(document).ready(function($){ //fire on DOM ready
 	 });
 
 
-    $('#activeitem_videogame').click(function() { 
+	 $(document).on("click",".activeitem_game",function(e){
+
+    	var active_game_id = $(this).attr('id').substring(7);
+    	alert(active_game_id);
+
         $.ajax({
             url: 'loader.php?action=insert_tick',
             type: 'POST',
-            data: {'submit':true, 'tick_name':'level complete'}, // An object with the key 'submit' and value 'true;
+            data: {'submit':true, 'tick_name':'chapter complete', 'category':'2', 'active_id':active_game_id}, // An object with the key 'submit' and value 'true;
             success: function (result) {
-              alert("Your bookmark has been saved");
+              alert(result);
             }
         });  
-    });
+
+        refreshtickstream();
+
+	 });
 
 
 
@@ -358,7 +369,7 @@ a.nav-link, a.navbar-brand{
 				<div id="active_books_content"></div>
 
 				<h3>Active Games</h3>
-				<img src="images/games/zeldawindwakerhdwiiu.jpg" class="img-responsive" id="activeitem_videogame" style="cursor:pointer;">
+				<div id="active_games_content"></div>
 				<div class="clear"></div>
 			</div>
 
@@ -400,7 +411,7 @@ a.nav-link, a.navbar-brand{
 
 			<div class="col-lg-12 container_quickticks">
 				<h2>Inventory</h2>
-				<div id="active_inventory" class="col-lg-3"></div>
+				<div id="active_inventory"></div>
 			</div>
 
 
