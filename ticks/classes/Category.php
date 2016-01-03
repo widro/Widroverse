@@ -29,9 +29,21 @@ class Category{
 
 
 
+	function get_category_by_id($category_id){
+		$sql_category = "
+		select * from categories
+		where category_id = '$category_id'
+		limit 1
+		";
 
+		$result_category = mysql_query($sql_category);
 
+		while($row_category=mysql_fetch_array($result_category)){
+			$return_category = array('category_id'=>$category_id, 'category_name'=>$category_name, 'category_description'=>$category_description, 'category_slug'=>$category_slug);
+		}
 
+		return $return_category;
+	}
 
 
 
