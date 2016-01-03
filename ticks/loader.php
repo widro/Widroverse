@@ -2,6 +2,7 @@
 
 include('classes/Book.php');
 include('classes/Category.php');
+include('classes/Inventory.php');
 include('classes/Tick.php');
 
 $action = $_GET['action'];
@@ -91,6 +92,23 @@ if($action=="get_active_books"){
 
 		echo'
 			<img src="'.$book_image.'" class="img-responsive activeitem_book" id="book_id'.$book_id.'" style="cursor:pointer;" alt="'.$book_name.'"><br><br>
+			';
+	}
+}
+
+if($action=="get_inventory"){
+	$inventory = new Inventory;
+	$allinventory = $inventory->list_inventory();
+
+	foreach($allinventory as $thisinventory){
+		$inventory_id = $thisinventory['inventory_id'];
+		$inventory_name = $thisinventory['inventory_name'];
+		$inventory_type = $thisinventory['inventory_type'];
+		$inventory_image = $thisinventory['inventory_image'];
+
+
+		echo'
+			<img src="'.$inventory_image.'" class="img-responsive activeitem_book" id="inventory_id'.$inventory_id.'" style="cursor:pointer;" alt="'.$inventory_name.'"><br><br>
 			';
 	}
 }

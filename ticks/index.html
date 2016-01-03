@@ -24,6 +24,10 @@
         $('#active_books_content').load('http://widroverse.localhost/ticks/loader.php?action=get_active_books');
     });
 
+    $(function(){
+        $('#active_inventory').load('http://widroverse.localhost/ticks/loader.php?action=get_inventory');
+    });
+
 
 
 jQuery(document).ready(function($){ //fire on DOM ready
@@ -314,11 +318,12 @@ a.nav-link, a.navbar-brand{
 
 			<div class="col-lg-12 container_quickticks">
 				<h2>Stats</h2>
-
+				<div id="active_books_content"></div>
 
 
 
 			</div>
+
 
 
 
@@ -370,6 +375,30 @@ a.nav-link, a.navbar-brand{
 			<div class="col-lg-3 main_bottom_overall">
 				<h3>Overall</h3>
 			</div>
+
+
+
+
+
+
+
+
+
+			<div class="col-lg-12 container_quickticks">
+				<h2>Inventory</h2>
+				<div id="active_inventory"></div>
+
+
+
+			</div>
+
+
+
+
+
+
+
+
 
 		</div>
 		<div class="col-lg-3 tickstream">
