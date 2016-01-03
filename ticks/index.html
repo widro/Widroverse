@@ -15,6 +15,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <script>
+
+	function refreshtickstream(){
+		$('#tickstream_content').load('http://widroverse.localhost/ticks/loader.php?action=get_tickstream');
+              alert("tickstream refrehsed!");
+	}
+
     $(function(){
         $('#tickstream_content').load('http://widroverse.localhost/ticks/loader.php?action=get_tickstream');
     });
@@ -36,13 +42,17 @@ jQuery(document).ready(function($){ //fire on DOM ready
 	  //insert_tick_name
 	  var insert_tick_name = $('#insert_tick_name').val();
 	  alert(insert_tick_name);
+	  var tickform_dateoverride = $('#tickform_dateoverride').val();
+	  var tickform_category = $('#tickform_category').val();
 
         $.ajax({
             url: 'loader.php?action=insert_tick',
             type: 'POST',
-            data: {'submit':true, 'tick_name':insert_tick_name}, // An object with the key 'submit' and value 'true;
+            data: {'submit':true, 'tick_name':insert_tick_name, 'tickform_dateoverride':tickform_dateoverride, 'tickform_category':tickform_category}, // An object with the key 'submit' and value 'true;
             success: function (result) {
-              alert("Your bookmark has been saved");
+              alert("Your tick has been saved");
+
+		        refreshtickstream();
             }
         });  
     });
@@ -62,7 +72,7 @@ jQuery(document).ready(function($){ //fire on DOM ready
             }
         });  
 
-
+        refreshtickstream();
 
 	 });
 
@@ -153,6 +163,10 @@ div.tickstream_cell{
 a.nav-link, a.navbar-brand{
 	color:#fff;
 }
+
+.clear{
+	clear:both;
+}
 </style>
 
 
@@ -203,6 +217,8 @@ a.nav-link, a.navbar-brand{
             <li><a href="#">Widro.com</a></li>
           </ul>
         </li>
+        <li><a href="#">Scavenger Hunt</a></li>
+        <li><a href="#">FAQ</a></li>
       </ul>
       <!--
       <form class="navbar-form navbar-left" role="search">
@@ -230,28 +246,29 @@ a.nav-link, a.navbar-brand{
 	<div class="container">
 		<div class="col-lg-9">
 			<h1>Welcome to the All-New Widroverse TickAdmin</h1>
-<div class="alert alert-success alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Warning!</strong> Better check yourself, you're not looking too good.
-</div>
+
+			<div class="alert alert-success alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+			</div>
 
 
-<div class="alert alert-info alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Warning!</strong> Better check yourself, you're not looking too good.
-</div>
+			<div class="alert alert-info alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+			</div>
 
 
-<div class="alert alert-warning alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Warning!</strong> Better check yourself, you're not looking too good.
-</div>
+			<div class="alert alert-warning alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+			</div>
 
 
-<div class="alert alert-danger alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Warning!</strong> Better check yourself, you're not looking too good.
-</div>
+			<div class="alert alert-danger alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+			</div>
 
 
 
@@ -259,23 +276,41 @@ a.nav-link, a.navbar-brand{
 			<div class="col-lg-12 container_tickform">
 				<h2>Tick Form</h2>
 
-				<div class="dropdown">
-				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				    Category
-				    <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-				    <li><a href="#">Action</a></li>
-				    <li><a href="#">Another action</a></li>
-				    <li><a href="#">Something else here</a></li>
-				    <li role="separator" class="divider"></li>
-				    <li><a href="#">Separated link</a></li>
-				  </ul>
+				<div class="input-group">
+				  <input type="text" class="form-control" placeholder="Tick Name" aria-describedby="tick_name" id="insert_tick_name">
 				</div>
 
 				<div class="input-group">
-				  <input type="text" class="form-control" placeholder="Tick Name" aria-describedby="tick_name" id="insert_tick_name">
+				  <select id="tickform_dateoverride" class="form-control">
+				  		<option value=''>--- Date Override ---</option>
+				  		<option value='2016-01-01'>2016-01-01</option>
+				  		<option value='2016-01-02'>2016-01-02</option>
+				  		<option value='2016-01-03'>2016-01-03</option>
+				  		<option value='2016-01-04'>2016-01-04</option>
+				  		<option value='2016-01-05'>2016-01-05</option>
+				  		<option value='2016-01-06'>2016-01-06</option>
+				  </select>
+				</div>
 
+				<div class="input-group">
+				  <select id="tickform_category" class="form-control">
+				  		<option value=''>--- Category ---</option>
+				  		<option value='1'>Life</option>
+				  		<option value='2'>Video Games</option>
+				  		<option value='3'>Food</option>
+				  		<option value='4'>Cooking</option>
+				  		<option value='5'>Exercise</option>
+				  		<option value='6'>Books</option>
+				  		<option value='7'>Inside Pulse</option>
+				  		<option value='8'>GameCo</option>
+				  		<option value='9'>Panos Brands</option>
+				  		<option value='10'>Music</option>
+				  		<option value='11'>Inventory</option>
+				  		<option value='12'>Movies</option>
+				  		<option value='13'>TV</option>
+				  		<option value='14'>Digital Grout</option>
+				  		<option value='15'>Widro.com</option>
+				  </select>
 				</div>
 
 
@@ -307,27 +342,6 @@ a.nav-link, a.navbar-brand{
 
 
 			<div class="col-lg-12 container_quickticks">
-				<h2>Checklists</h2>
-
-
-
-
-			</div>
-
-
-
-			<div class="col-lg-12 container_quickticks">
-				<h2>Stats</h2>
-				<div id="active_books_content"></div>
-
-
-
-			</div>
-
-
-
-
-			<div class="col-lg-12 container_quickticks">
 				<h2>Paste Excel</h2>
 				<textarea id="xls_paste_content">Enter Text here</textarea>
 				  <button type="button" class="btn btn-default" id="insert_xls_paste_button">ADD XLS PASTE</button>
@@ -345,7 +359,7 @@ a.nav-link, a.navbar-brand{
 
 				<h3>Active Games</h3>
 				<img src="images/games/zeldawindwakerhdwiiu.jpg" class="img-responsive" id="activeitem_videogame" style="cursor:pointer;">
-
+				<div class="clear"></div>
 			</div>
 
 			<div class="col-lg-6 main_bottom_today">
@@ -386,10 +400,22 @@ a.nav-link, a.navbar-brand{
 
 			<div class="col-lg-12 container_quickticks">
 				<h2>Inventory</h2>
-				<div id="active_inventory"></div>
+				<div id="active_inventory" class="col-lg-3"></div>
+			</div>
 
 
 
+
+			<div class="col-lg-12 container_quickticks">
+				<h2>Checklists</h2>
+				<div id="xxxxxxxxxx"></div>
+			</div>
+
+
+
+			<div class="col-lg-12 container_quickticks">
+				<h2>Stats</h2>
+				<div id="xxxxxxxxxx"></div>
 			</div>
 
 
@@ -409,209 +435,7 @@ a.nav-link, a.navbar-brand{
 				<a href="#" id="">Latest</a> | 
 				<a href="#" id="">Latest</a>
 			</div>
-
-
-			<div id="tickstream_content" class="col-lg-12">
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/video-games.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/inside-pulse.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/life.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/food.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/cooking.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/exercise.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/books.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/gameco.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/panos-brands.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/music.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/inventory.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/movies.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/tv.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/digital-grout.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-			<div class="media tickstream_cell">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="images/tickicons/widrocom.png" alt="..." width=32>
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Top aligned media</h4>
-				<p><a href="javascript:alert('');return false;">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>2015-12-20 13:30</h5>
-			  </div>
-			</div>
-
-				
-
-				
-			</div>
+			<div id="tickstream_content" class="col-lg-12"></div>
 		</div>
 	</div>
 

@@ -39,6 +39,10 @@ class Category{
 		$result_category = mysql_query($sql_category);
 
 		while($row_category=mysql_fetch_array($result_category)){
+			$category_id = $row_category['category_id'];
+			$category_name = $row_category['category_name'];
+			$category_description = $row_category['category_description'];
+			$category_slug = $row_category['category_slug'];
 			$return_category = array('category_id'=>$category_id, 'category_name'=>$category_name, 'category_description'=>$category_description, 'category_slug'=>$category_slug);
 		}
 

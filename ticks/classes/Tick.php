@@ -11,7 +11,7 @@ class Tick{
 
 		$sql_tick = "
 		select * from ticks
-		order by tick_id DESC
+		order by tick_date DESC
 		";
 
 		$result_tick = mysql_query($sql_tick);

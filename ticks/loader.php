@@ -37,17 +37,25 @@ if($action=="get_tickstream"){
 	foreach($allticks as $thistick){
 		$tick_name = $thistick['tick_name'];
 		$tick_date = $thistick['tick_date'];
+		$category_id = $thistick['category_id'];
+
+
+		$category = new Category;
+		$categoryinfo = $category->get_category_by_id($category_id);
+
+
+
 		echo'
 			<div class="media tickstream_cell">
 			  <div class="media-left">
 			    <a href="#">
-			      <img class="media-object" src="images/tickicons/inside-pulse.png" alt="..." width=32>
+			      <img class="media-object" src="images/tickicons/'.$categoryinfo['category_slug'].'.png" alt="..." width=32>
 			    </a>
 			  </div>
 			  <div class="media-body">
 			    <h4 class="media-heading">'.$tick_name.'</h4>
-				<p><a href="#">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>
-				<h5>'.$tick_date.'</h5>
+				<!--<p><a href="#">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>-->
+				<h5>'.substr($tick_date, 0, 10).'</h5>
 			  </div>
 			</div>
 			';
@@ -58,10 +66,26 @@ if($action=="get_tickstream"){
 if($action=="insert_tick"){
 
 	$tick_name = $_POST['tick_name'];
-	$category = $_POST['category'];
+	
 	$active_id = $_POST['active_id'];
 
-	$tick_date = date("Y-m-d");
+	if($_POST['tickform_dateoverride']){
+		$tick_date = $_POST['tickform_dateoverride'];
+	}
+	else{
+		$tick_date = date("Y-m-d");
+	}
+
+	if($_POST['tickform_category']){
+		$category = $_POST['tickform_category'];
+	}
+
+	elseif($_POST['category']){
+		$category = $_POST['category'];
+	}
+	else{
+		$category = '1';
+	}
 
 	$sql_insert_tick = "
 	insert into ticks (tick_name, tick_date, category_id, active_id) VALUES ('$tick_name','$tick_date','$category','$active_id')
