@@ -17,11 +17,11 @@
 <script>
 
     $(function(){
-        $('#tickstream_content').load('http://widroverse.localhost/ticks/loader.php?action=get_tickstream');
-        $('#active_books_content').load('http://widroverse.localhost/ticks/loader.php?action=get_active_books');
-        $('#active_games_content').load('http://widroverse.localhost/ticks/loader.php?action=get_active_games');
-        $('#active_inventory').load('http://widroverse.localhost/ticks/loader.php?action=get_inventory');
-        $('#active_stats').load('http://widroverse.localhost/ticks/loader.php?action=get_stats');
+        $('#tickstream_content').load('http://'+document.domain+'/ticks/loader.php?action=get_tickstream');
+        $('#active_books_content').load('http://'+document.domain+'/ticks/loader.php?action=get_active_books');
+        $('#active_games_content').load('http://'+document.domain+'/ticks/loader.php?action=get_active_games');
+        $('#active_inventory').load('http://'+document.domain+'/ticks/loader.php?action=get_inventory');
+        $('#active_stats').load('http://'+document.domain+'/ticks/loader.php?action=get_stats');
     });
 
 
@@ -416,6 +416,21 @@ img.thumb100fornow{
 			</div>	
 
 
+
+			<div class="col-lg-12 container_quickticks">
+				<h2>API to Tick Buttons</h2>
+
+				  <button type="button" class="btn btn-primary quicktickbutton" id="twitter">twitter</button>
+
+				  <button type="button" class="btn btn-success quicktickbutton" id="facebook">facebook</button>
+
+				  <button type="button" class="btn btn-info quicktickbutton" id="wordpress">wordpress rss</button>
+
+				  <button type="button" class="btn btn-warning quicktickbutton" id="tumblr">tumblr</button>
+
+				  <button type="button" class="btn btn-danger quicktickbutton" id="git">git</button>
+
+			</div>	
 
 			<div class="col-lg-12 container_quickticks">
 				<h2>Paste Excel</h2>
