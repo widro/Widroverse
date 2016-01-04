@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
+error_reporting(E_ERROR | E_PARSE);
 
 include('classes/AllClasses.php');
 
@@ -217,7 +217,7 @@ if($action=="get_stats"){
 			//foreach($get_stats_date_vars as $get_stats_date_vars_vals){
 			$totalticks_total = 0;
 			for($i=0;$i<15;$i++){
-				if($get_stats_date_vars[$i]['totalticks']){
+				if($get_stats_date_vars[$i]['totalticks']>0){
 					$totalticks = $get_stats_date_vars[$i]['totalticks'];
 					$totalticks_total = $totalticks_total +$totalticks;
 				}

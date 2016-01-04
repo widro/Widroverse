@@ -75,22 +75,6 @@ jQuery(document).ready(function($){ //fire on DOM ready
     });
 
 
-	 $(document).on("click",".activeitem_book",function(e){
-
-    	var active_book_id = $(this).attr('id').substring(7);
-    	alert(active_book_id);
-      insert_tick_master({'submit':true, 'tick_name':'chapter complete', 'category':'6', 'active_id':active_book_id});
-	 });
-
-
-	 $(document).on("click",".activeitem_game",function(e){
-
-    	var active_game_id = $(this).attr('id').substring(7);
-    	alert(active_game_id);
-      insert_tick_master({'submit':true, 'tick_name':'level complete', 'category':'2', 'active_id':active_game_id});
-
-	 });
-
 
 
 	 $(document).on("click",".quicktickbutton",function(e){
@@ -103,10 +87,6 @@ jQuery(document).ready(function($){ //fire on DOM ready
     	var tick_name = quick_tick_vars[2].replace("_", " ");;
 
       insert_tick_master({'submit':true, 'tick_name':tick_name, 'category':category_id, 'active_id':active_id});
-
-
-
-
 
 	 });
 
@@ -363,19 +343,27 @@ img.thumb100fornow{
 				<h2>QuickTick Buttons</h2>
 
 
-				  <button type="button" class="btn btn-primary quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+				  <button type="button" class="btn btn-primary quicktickbutton" id="id6|cat12|shower_time">nails</button>
 
-				  <button type="button" class="btn btn-success quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+				  <button type="button" class="btn btn-success quicktickbutton" id="id6|cat12|shower_time">toenails</button>
 
-				  <button type="button" class="btn btn-info quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+				  <button type="button" class="btn btn-info quicktickbutton" id="id6|cat12|shower_time">laundry</button>
 
-				  <button type="button" class="btn btn-warning quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+				  <button type="button" class="btn btn-warning quicktickbutton" id="id6|cat12|shower_time">shave</button>
 
-				  <button type="button" class="btn btn-danger quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+				  <button type="button" class="btn btn-danger quicktickbutton" id="id6|cat12|shower_time">nanys maids</button>
 
+				  <button type="button" class="btn btn-primary quicktickbutton" id="id6|cat12|shower_time">haircut</button>
 
+				  <button type="button" class="btn btn-success quicktickbutton" id="id6|cat12|shower_time">jc greenfield</button>
 
+				  
 
+				  <button type="button" class="btn btn-info quicktickbutton" id="id6|cat12|shower_time">laundry</button>
+
+				  <button type="button" class="btn btn-warning quicktickbutton" id="id6|cat12|shower_time">shave</button>
+
+				  <button type="button" class="btn btn-danger quicktickbutton" id="id6|cat12|shower_time">nanys maids</button>
 
 
 
@@ -401,6 +389,31 @@ img.thumb100fornow{
 				  </ul>
 				</div>
 			</div>
+
+			<div class="col-lg-12 container_quickticks">
+				<h2>Daily Scavenger Hunt/Sched Items</h2>
+
+				  <button type="button" class="btn btn-primary quicktickbutton" id="id1|cat3|fruit">fruit</button>
+
+				  <button type="button" class="btn btn-success quicktickbutton" id="id1|cat1|call_someone">call someone</button>
+
+				  <button type="button" class="btn btn-info quicktickbutton" id="id1|cat5|exercise">exercise</button>
+
+				  <button type="button" class="btn btn-warning quicktickbutton" id="id1|cat3|lunch">lunch</button>
+
+				  <button type="button" class="btn btn-danger quicktickbutton" id="id1|cat3|dinner">dinner</button>
+
+				  <button type="button" class="btn btn-primary quicktickbutton" id="id1|cat1|shower">shower</button>
+
+				  <button type="button" class="btn btn-success quicktickbutton" id="id1|cat1|email_someone">email someone</button>
+
+				  <button type="button" class="btn btn-info quicktickbutton" id="id1|cat1|took_vitamin_d">vitamin D</button>
+
+				  <button type="button" class="btn btn-warning quicktickbutton" id="id1|cat1|read_esports_article">esports article</button>
+
+				  <button type="button" class="btn btn-danger quicktickbutton" id="id1|cat1|read_mets_article">mets article</button>
+
+			</div>	
 
 
 
