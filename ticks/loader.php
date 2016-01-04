@@ -1,10 +1,7 @@
 <?php
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-include('classes/Book.php');
-include('classes/Game.php');
-include('classes/Category.php');
-include('classes/Inventory.php');
-include('classes/Tick.php');
+include('classes/AllClasses.php');
 
 $action = $_GET['action'];
 
@@ -39,12 +36,27 @@ if($action=="get_tickstream"){
 		$tick_name = $thistick['tick_name'];
 		$tick_date = $thistick['tick_date'];
 		$category_id = $thistick['category_id'];
+		$active_id = $thistick['active_id'];
 
 
 		$category = new Category;
 		$categoryinfo = $category->get_category_by_id($category_id);
 
+		$description = "";
 
+		if($category_id==2){
+			$game = new Game;
+			$gameinfo = $game->get_game_by_id($active_id);
+
+			$description = "Completed a level or trophy in <a href=#>".$gameinfo['game_name']."</a>!";
+		}
+
+		if($category_id==6){
+			$book = new Book;
+			$bookinfo = $book->get_book_by_id($active_id);
+
+			$description = "Read a chapter in <a href=#>".$bookinfo['book_name']."</a>!";
+		}
 
 		echo'
 			<div class="media tickstream_cell">
@@ -55,7 +67,7 @@ if($action=="get_tickstream"){
 			  </div>
 			  <div class="media-body">
 			    <h4 class="media-heading">'.$tick_name.'</h4>
-				<!--<p><a href="#">Read Chapter 1</a> of <a href="">Disease Delusion</a> this is a sample tick in the all new widroverse tick admin, launching in 2016</p>-->
+				<p>'.$description.'</p>
 				<h5>'.substr($tick_date, 0, 10).'</h5>
 			  </div>
 			</div>
@@ -93,9 +105,10 @@ if($action=="insert_tick"){
 	";
 
 	$result_insert_tick = mysql_query($sql_insert_tick);
+	$last_id = mysql_insert_id();
 
 	if($result_insert_tick){
-		echo "book inserted!";
+		echo "your tick '".$tick_name."' has been inserted! #id ".$last_id." !";
 	}
 	else{
 		echo "fail";
@@ -116,7 +129,11 @@ if($action=="get_active_books"){
 		$status = $thisbook['status'];
 
 		echo'
-			<img src="'.$book_image.'" class="img-responsive activeitem_book" id="book_id'.$book_id.'" style="cursor:pointer;" alt="'.$book_name.'" width=100><br><br>
+			<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive quicktickbutton" src="'.$book_image.'" alt="" id="id'.$book_id.'|cat6|chapter_complete" alt="'.$book_name.'" style="height:250px;">
+                </a>
+            </div>
 			';
 	}
 }
@@ -132,7 +149,11 @@ if($action=="get_active_games"){
 		$status = $thisgame['status'];
 
 		echo'
-			<img src="'.$game_image.'" class="img-responsive activeitem_game" id="game_id'.$game_id.'" style="cursor:pointer;" alt="'.$game_name.'" width=100><br><br>
+			<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive quicktickbutton" src="'.$game_image.'" alt="" id="id'.$game_id.'|cat2|level_complete" alt="'.$game_name.'" style="height:250px;">
+                </a>
+            </div>
 			';
 	}
 }
@@ -149,9 +170,74 @@ if($action=="get_inventory"){
 
 
 		echo'
-			<img src="'.$inventory_image.'" class="img-responsive activeitem_book" id="inventory_id'.$inventory_id.'" style="cursor:pointer;" alt="'.$inventory_name.'"><br><br>
+			<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive activeitem_book" src="'.$inventory_image.'" alt="" id="inventory_id'.$inventory_id.'" alt="'.$inventory_name.'">
+                </a>
+            </div>
 			';
 	}
+}
+
+
+if($action=="get_stats"){
+	$stats = new Stats;
+	$get_stats = $stats->get_stats();
+	echo'
+		<table class="table table-striped table-hover table-responsive">
+
+		<tr>
+		<th>Date</th>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th>
+		<th>5</th>
+		<th>6</th>
+		<th>7</th>
+		<th>8</th>
+		<th>9</th>
+		<th>10</th>
+		<th>11</th>
+		<th>12</th>
+		<th>13</th>
+		<th>14</th>
+		<th>15</th>
+		<th>Ticks</th>
+
+		</tr>
+		';
+			//$get_stats[$tick_date][$category_id] = $totalticks;
+	foreach($get_stats as $get_stats_date => $get_stats_date_vars){
+		$tick_date = $get_stats_date;
+		echo'
+			<tr>
+			<td>'.$tick_date.'</td>
+			';
+			//foreach($get_stats_date_vars as $get_stats_date_vars_vals){
+			$totalticks_total = 0;
+			for($i=0;$i<15;$i++){
+				if($get_stats_date_vars[$i]['totalticks']){
+					$totalticks = $get_stats_date_vars[$i]['totalticks'];
+					$totalticks_total = $totalticks_total +$totalticks;
+				}
+				else{
+					$totalticks=0;
+				}
+
+				echo'
+					<td>'.$totalticks.'</td>
+					';
+			}
+		echo'
+			<th>'.$totalticks_total.'</th>
+			</tr>
+			';
+
+	}
+		echo'
+			</table>
+			';
 }
 
 

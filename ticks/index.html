@@ -16,27 +16,50 @@
 
 <script>
 
+    $(function(){
+        $('#tickstream_content').load('http://widroverse.localhost/ticks/loader.php?action=get_tickstream');
+        $('#active_books_content').load('http://widroverse.localhost/ticks/loader.php?action=get_active_books');
+        $('#active_games_content').load('http://widroverse.localhost/ticks/loader.php?action=get_active_games');
+        $('#active_inventory').load('http://widroverse.localhost/ticks/loader.php?action=get_inventory');
+        $('#active_stats').load('http://widroverse.localhost/ticks/loader.php?action=get_stats');
+    });
+
+
+
+
+
+
+
+
+
 	function refreshtickstream(){
 		$('#tickstream_content').load('http://widroverse.localhost/ticks/loader.php?action=get_tickstream');
               alert("tickstream refrehsed!");
 	}
 
-    $(function(){
-        $('#tickstream_content').load('http://widroverse.localhost/ticks/loader.php?action=get_tickstream');
-    });
 
+	function error_divs(type, msg){
+		$("#master_error_div").removeClass("alert-success").removeClass("alert-info").removeClass("alert-danger").removeClass("alert-warning");
+		$("#master_error_div").addClass(type);
+		$("#master_error_div div#error_txt_div").html(msg);
 
-    $(function(){
-        $('#active_books_content').load('http://widroverse.localhost/ticks/loader.php?action=get_active_books');
-    });
+	}
 
-    $(function(){
-        $('#active_games_content').load('http://widroverse.localhost/ticks/loader.php?action=get_active_games');
-    });
+	function insert_tick_master(data){
+        $.ajax({
+            url: 'loader.php?action=insert_tick',
+            type: 'POST',
+            data: data, // An object with the key 'submit' and value 'true;
+            success: function (result) {
+              //alert("Your tick has been saved");
+              error_divs("alert-success", "Your tick has been saved")
 
-    $(function(){
-        $('#active_inventory').load('http://widroverse.localhost/ticks/loader.php?action=get_inventory');
-    });
+		        refreshtickstream();
+            }
+        });  
+
+	}
+
 
 
 
@@ -48,17 +71,7 @@ jQuery(document).ready(function($){ //fire on DOM ready
 	  alert(insert_tick_name);
 	  var tickform_dateoverride = $('#tickform_dateoverride').val();
 	  var tickform_category = $('#tickform_category').val();
-
-        $.ajax({
-            url: 'loader.php?action=insert_tick',
-            type: 'POST',
-            data: {'submit':true, 'tick_name':insert_tick_name, 'tickform_dateoverride':tickform_dateoverride, 'tickform_category':tickform_category}, // An object with the key 'submit' and value 'true;
-            success: function (result) {
-              alert("Your tick has been saved");
-
-		        refreshtickstream();
-            }
-        });  
+      insert_tick_master({'submit':true, 'tick_name':insert_tick_name, 'tickform_dateoverride':tickform_dateoverride, 'tickform_category':tickform_category});
     });
 
 
@@ -66,18 +79,7 @@ jQuery(document).ready(function($){ //fire on DOM ready
 
     	var active_book_id = $(this).attr('id').substring(7);
     	alert(active_book_id);
-
-        $.ajax({
-            url: 'loader.php?action=insert_tick',
-            type: 'POST',
-            data: {'submit':true, 'tick_name':'chapter complete', 'category':'6', 'active_id':active_book_id}, // An object with the key 'submit' and value 'true;
-            success: function (result) {
-              alert(result);
-            }
-        });  
-
-        refreshtickstream();
-
+      insert_tick_master({'submit':true, 'tick_name':'chapter complete', 'category':'6', 'active_id':active_book_id});
 	 });
 
 
@@ -85,19 +87,29 @@ jQuery(document).ready(function($){ //fire on DOM ready
 
     	var active_game_id = $(this).attr('id').substring(7);
     	alert(active_game_id);
-
-        $.ajax({
-            url: 'loader.php?action=insert_tick',
-            type: 'POST',
-            data: {'submit':true, 'tick_name':'chapter complete', 'category':'2', 'active_id':active_game_id}, // An object with the key 'submit' and value 'true;
-            success: function (result) {
-              alert(result);
-            }
-        });  
-
-        refreshtickstream();
+      insert_tick_master({'submit':true, 'tick_name':'level complete', 'category':'2', 'active_id':active_game_id});
 
 	 });
+
+
+
+	 $(document).on("click",".quicktickbutton",function(e){
+
+    	var quick_tick_button_id = $(this).attr('id');
+    	var quick_tick_vars = quick_tick_button_id.split("|");
+
+    	var active_id = quick_tick_vars[0].substring(2);
+    	var category_id = quick_tick_vars[1].substring(3);
+    	var tick_name = quick_tick_vars[2].replace("_", " ");;
+
+      insert_tick_master({'submit':true, 'tick_name':tick_name, 'category':category_id, 'active_id':active_id});
+
+
+
+
+
+	 });
+
 
 
 
@@ -143,21 +155,6 @@ jQuery(document).ready(function($){ //fire on DOM ready
 	height:auto;
 }
 
-div.main_bottom_thisweek{
-	background:#999999;
-	height:100%;
-}
-
-div.main_bottom_today{
-	background:#666666;
-	height:100%;
-}
-
-div.main_bottom_overall{
-	background:#999999;
-	height:100%;
-}
-
 div.container_tickform, div.container_quickticks{
 	padding:20px;
 	padding-top:5px;
@@ -168,16 +165,26 @@ div.container_tickform, div.container_quickticks{
 
 div.tickstream_cell{
 	border-bottom:1px solid #eeeeee;
-
 }
 
 a.nav-link, a.navbar-brand{
 	color:#fff;
 }
 
+
+img.thumb100fornow{
+	cursor:pointer;
+	padding:5px;
+	float:left;
+	width:100px;
+}
+
 .clear{
 	clear:both;
 }
+
+
+
 </style>
 
 
@@ -258,27 +265,49 @@ a.nav-link, a.navbar-brand{
 		<div class="col-lg-9">
 			<h1>Welcome to the All-New Widroverse TickAdmin</h1>
 
-			<div class="alert alert-success alert-dismissible" role="alert">
+			<div class="alert alert-success alert-dismissible" role="alert" id="master_error_div">
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+			  <div id="error_txt_div"></div>
 			</div>
 
 
-			<div class="alert alert-info alert-dismissible" role="alert">
-			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			  <strong>Warning!</strong> Better check yourself, you're not looking too good.
-			</div>
 
 
-			<div class="alert alert-warning alert-dismissible" role="alert">
-			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			  <strong>Warning!</strong> Better check yourself, you're not looking too good.
-			</div>
+			<div class="col-lg-12 container_quickticks">
+				<nav>
+				  <ul class="pagination">
+				    <li>
+				      <a href="#" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				    <li><a href="#">Thu</a></li>
+				    <li><a href="#">Fri</a></li>
+				    <li><a href="#">Sat</a></li>
+				    <li><a href="#">SUNDAY (3)</a></li>
+				    <li><a href="#">Mon</a></li>
+				    <li><a href="#">Tue</a></li>
+				    <li><a href="#">Wed</a></li>
+				    <li>
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+				</nav>
 
 
-			<div class="alert alert-danger alert-dismissible" role="alert">
-			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+
+				  <button type="button" class="btn btn-primary quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+
+				  <button type="button" class="btn btn-success quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+
+				  <button type="button" class="btn btn-info quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+
+				  <button type="button" class="btn btn-warning quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+
+				  <button type="button" class="btn btn-danger quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+
 			</div>
 
 
@@ -330,9 +359,32 @@ a.nav-link, a.navbar-brand{
 			</div>
 
 
-
 			<div class="col-lg-12 container_quickticks">
 				<h2>QuickTick Buttons</h2>
+
+
+				  <button type="button" class="btn btn-primary quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+
+				  <button type="button" class="btn btn-success quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+
+				  <button type="button" class="btn btn-info quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+
+				  <button type="button" class="btn btn-warning quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+
+				  <button type="button" class="btn btn-danger quicktickbutton" id="id6|cat12|shower_time">Shower</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
 				<!-- Split button -->
 				<div class="btn-group">
 				  <button type="button" class="btn btn-danger">Action</button>
@@ -361,50 +413,15 @@ a.nav-link, a.navbar-brand{
 
 			</div>
 
-
-
-
-			<div class="col-lg-3 main_bottom_thisweek">
+			<div class="col-lg-12 container_quickticks">
 				<h3>Active Books</h3>
 				<div id="active_books_content"></div>
+			</div>
 
-				<h3>Active Games</h3>
+			<div class="col-lg-12 container_quickticks">
+				<h3>THE20</h3>
 				<div id="active_games_content"></div>
-				<div class="clear"></div>
 			</div>
-
-			<div class="col-lg-6 main_bottom_today">
-				<nav>
-				  <ul class="pagination">
-				    <li>
-				      <a href="#" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				      </a>
-				    </li>
-				    <li><a href="#">Thu</a></li>
-				    <li><a href="#">Fri</a></li>
-				    <li><a href="#">Sat</a></li>
-				    <li><a href="#">SUNDAY (20)</a></li>
-				    <li><a href="#">Mon</a></li>
-				    <li><a href="#">Tue</a></li>
-				    <li><a href="#">Wed</a></li>
-				    <li>
-				      <a href="#" aria-label="Next">
-				        <span aria-hidden="true">&raquo;</span>
-				      </a>
-				    </li>
-				  </ul>
-				</nav>
-			</div>
-
-			<div class="col-lg-3 main_bottom_overall">
-				<h3>Overall</h3>
-			</div>
-
-
-
-
-
 
 
 
@@ -426,7 +443,7 @@ a.nav-link, a.navbar-brand{
 
 			<div class="col-lg-12 container_quickticks">
 				<h2>Stats</h2>
-				<div id="xxxxxxxxxx"></div>
+				<div id="active_stats"></div>
 			</div>
 
 
@@ -442,9 +459,9 @@ a.nav-link, a.navbar-brand{
 			<h2>Tickstream</h2>
 			<div class="col-lg-12">
 				<a href="#" id="">Latest</a> | 
-				<a href="#" id="">Latest</a> | 
-				<a href="#" id="">Latest</a> | 
-				<a href="#" id="">Latest</a>
+				<a href="#" id="">Yesterday</a> | 
+				<a href="#" id="">Life Only</a> | 
+				<a href="#" id="">Today Only</a>
 			</div>
 			<div id="tickstream_content" class="col-lg-12"></div>
 		</div>
