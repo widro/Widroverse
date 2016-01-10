@@ -1,0 +1,37 @@
+.container {
+    width: 100%;
+}	
+
+.tickstream{
+	background:#333333;
+	color:#eeeeee;
+	height:auto;
+}
+
+div.container_tickform, div.container_quickticks{
+	padding:20px;
+	padding-top:5px;
+	border:1px solid #000000;
+	border-radius: 5px;
+	margin-bottom:20px;
+}
+
+div.tickstream_cell{
+	border-bottom:1px solid #eeeeee;
+}
+
+a.nav-link, a.navbar-brand{
+	color:#fff;
+}
+
+
+img.thumb100fornow{
+	cursor:pointer;
+	padding:5px;
+	float:left;
+	width:100px;
+}
+
+.clear{
+	clear:both;
+}
