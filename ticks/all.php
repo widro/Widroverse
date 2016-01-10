@@ -1,246 +1,7 @@
-<html>
-<head>
-<title>Widroverse Ticks</title>
-
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-<script>
-
-    $(function(){
-        $('#tickstream_content').load('http://'+document.domain+'/ticks/loader.php?action=get_tickstream');
-        $('#active_books_content').load('http://'+document.domain+'/ticks/loader.php?action=get_active_books');
-        $('#active_games_content').load('http://'+document.domain+'/ticks/loader.php?action=get_active_games');
-        $('#active_inventory').load('http://'+document.domain+'/ticks/loader.php?action=get_inventory');
-        $('#active_stats').load('http://'+document.domain+'/ticks/loader.php?action=get_stats');
-    });
-
-
-
-
-
-
-
-
-
-	function refreshtickstream(){
-		$('#tickstream_content').load('http://widroverse.localhost/ticks/loader.php?action=get_tickstream');
-              alert("tickstream refrehsed!");
-	}
-
-
-	function error_divs(type, msg){
-		$("#master_error_div").removeClass("alert-success").removeClass("alert-info").removeClass("alert-danger").removeClass("alert-warning");
-		$("#master_error_div").addClass(type);
-		$("#master_error_div div#error_txt_div").html(msg);
-
-	}
-
-	function insert_tick_master(data){
-        $.ajax({
-            url: 'loader.php?action=insert_tick',
-            type: 'POST',
-            data: data, // An object with the key 'submit' and value 'true;
-            success: function (result) {
-              //alert("Your tick has been saved");
-              error_divs("alert-success", "Your tick has been saved")
-
-		        refreshtickstream();
-            }
-        });  
-
-	}
-
-
-
-
-jQuery(document).ready(function($){ //fire on DOM ready
-
-    $('#insert_click_form_button').click(function() { 
-	  //insert_tick_name
-	  var insert_tick_name = $('#insert_tick_name').val();
-	  alert(insert_tick_name);
-	  var tickform_dateoverride = $('#tickform_dateoverride').val();
-	  var tickform_category = $('#tickform_category').val();
-      insert_tick_master({'submit':true, 'tick_name':insert_tick_name, 'tickform_dateoverride':tickform_dateoverride, 'tickform_category':tickform_category});
-    });
-
-
-
-
-	 $(document).on("click",".quicktickbutton",function(e){
-
-    	var quick_tick_button_id = $(this).attr('id');
-    	var quick_tick_vars = quick_tick_button_id.split("|");
-
-    	var active_id = quick_tick_vars[0].substring(2);
-    	var category_id = quick_tick_vars[1].substring(3);
-    	var tick_name = quick_tick_vars[2].replace("_", " ");;
-
-      insert_tick_master({'submit':true, 'tick_name':tick_name, 'category':category_id, 'active_id':active_id});
-
-	 });
-
-
-
-
-
-
-
-
-
-
-
-    $('#insert_xls_paste_button').click(function() { 
-	  //insert_tick_name
-	  var xls_paste_content = $('#xls_paste_content').val();
-	  alert(xls_paste_content);
-
-        $.ajax({
-            url: 'loader.php?action=insert_xls_paste',
-            type: 'POST',
-            data: {'submit':true, 'xls_paste_content':xls_paste_content}, // An object with the key 'submit' and value 'true;
-            success: function (result) {
-              alert(result);
-            }
-        });  
-    });
-
-
-});
-
-
-
-
-</script>
-
-
-<style>
-.container {
-    width: 100%;
-}	
-
-.tickstream{
-	background:#333333;
-	color:#eeeeee;
-	height:auto;
-}
-
-div.container_tickform, div.container_quickticks{
-	padding:20px;
-	padding-top:5px;
-	border:1px solid #000000;
-	border-radius: 5px;
-	margin-bottom:20px;
-}
-
-div.tickstream_cell{
-	border-bottom:1px solid #eeeeee;
-}
-
-a.nav-link, a.navbar-brand{
-	color:#fff;
-}
-
-
-img.thumb100fornow{
-	cursor:pointer;
-	padding:5px;
-	float:left;
-	width:100px;
-}
-
-.clear{
-	clear:both;
-}
-
-
-
-</style>
-
-
-
-</head>
+<?php include('components/header.php'); ?>
 <body>
+<?php include('components/menu.php'); ?>
 
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">TickAdmin</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">TickStats</a></li>
-        <li><a href="#">Checklists</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Life</a></li>
-            <li><a href="#">Food</a></li>
-            <li><a href="#">Cooking</a></li>
-            <li><a href="#">Exercise</a></li>
-            <li><a href="#">Inventory</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Video Games</a></li>
-            <li><a href="#">Books</a></li>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">TV</a></li>
-            <li><a href="#">Music</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Inside Pulse</a></li>
-            <li><a href="#">GameCo</a></li>
-            <li><a href="#">PANOS Brands</a></li>
-            <li><a href="#">Digital Grout</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Widro.com</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Scavenger Hunt</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
-      <!--
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      -->
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Widroverse Home</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Excel Paste</a></li>
-            <li><a href="#">Fix Up Tick Data</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Schedule Items</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 	<div class="container">
 		<div class="col-lg-9">
 			<h1>Welcome to the All-New Widroverse TickAdmin</h1>
@@ -249,9 +10,6 @@ img.thumb100fornow{
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			  <div id="error_txt_div"></div>
 			</div>
-
-
-
 
 			<div class="col-lg-12 container_quickticks">
 				<nav>
@@ -276,8 +34,6 @@ img.thumb100fornow{
 				  </ul>
 				</nav>
 
-
-
 				  <button type="button" class="btn btn-primary quicktickbutton" id="id6|cat12|shower_time">Shower</button>
 
 				  <button type="button" class="btn btn-success quicktickbutton" id="id6|cat12|shower_time">Shower</button>
@@ -289,8 +45,6 @@ img.thumb100fornow{
 				  <button type="button" class="btn btn-danger quicktickbutton" id="id6|cat12|shower_time">Shower</button>
 
 			</div>
-
-
 
 
 			<div class="col-lg-12 container_tickform">
@@ -483,20 +237,7 @@ img.thumb100fornow{
 
 
 		</div>
-		<div class="col-lg-3 tickstream">
-			<h2>Tickstream</h2>
-			<div class="col-lg-12">
-				<a href="#" id="">Latest</a> | 
-				<a href="#" id="">Yesterday</a> | 
-				<a href="#" id="">Life Only</a> | 
-				<a href="#" id="">Today Only</a>
-			</div>
-			<div id="tickstream_content" class="col-lg-12"></div>
-		</div>
+		<?php include('components/tickstream.php'); ?>
 	</div>
-
-
-
-
 </body>
-</html>
+<?php include('components/footer.php'); ?>
