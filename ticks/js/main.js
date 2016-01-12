@@ -1,5 +1,5 @@
     $(function(){
-        $('#tickstream_content').load('http://'+document.domain+'/ticks/loader.php?action=get_tickstream');
+        $('#tickstream_content').load('http://'+document.domain+'/ticks/loader.php?action=get_tickstream&category_id=7&tick_date_start=2016-01-07&tick_date_end=2016-01-09');
         $('#active_books_content').load('http://'+document.domain+'/ticks/loader.php?action=get_active_books');
         $('#active_games_content').load('http://'+document.domain+'/ticks/loader.php?action=get_active_games');
         //$('#active_inventory').load('http://'+document.domain+'/ticks/loader.php?action=get_inventory');
