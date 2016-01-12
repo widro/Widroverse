@@ -14,5 +14,5 @@
 		</div>
 		<?php include('components/tickstream.php'); ?>
 	</div>
-</body>
+
 <?php include('components/footer.php'); ?>
