@@ -102,7 +102,6 @@ if($action=="insert_tick"){
 
 	$tick_name = $_POST['tick_name'];
 	
-	$active_id = $_POST['active_id'];
 
 	if($_POST['tickform_dateoverride']){
 		$tick_date = $_POST['tickform_dateoverride'];
@@ -121,6 +120,20 @@ if($action=="insert_tick"){
 	else{
 		$category = '1';
 	}
+
+	if($_POST['tickform_tag_id']){
+		$active_id = $_POST['tickform_tag_id'];
+	}
+	elseif($_POST['active_id']){
+		$active_id = $_POST['active_id'];
+	}
+	else{
+		$tick_date = date("Y-m-d");
+	}
+
+
+
+
 
 	$sql_insert_tick = "
 	insert into ticks (tick_name, tick_date, category_id, active_id) VALUES ('$tick_name','$tick_date','$category','$active_id')

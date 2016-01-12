@@ -67,24 +67,11 @@
 				</div>
 
 				<div class="input-group">
-				  <select id="tickform_category" class="form-control">
-				  		<option value=''>--- Category ---</option>
-				  		<option value='1'>Life</option>
-				  		<option value='2'>Video Games</option>
-				  		<option value='3'>Food</option>
-				  		<option value='4'>Cooking</option>
-				  		<option value='5'>Exercise</option>
-				  		<option value='6'>Books</option>
-				  		<option value='7'>Inside Pulse</option>
-				  		<option value='8'>GameCo</option>
-				  		<option value='9'>Panos Brands</option>
-				  		<option value='10'>Music</option>
-				  		<option value='11'>Inventory</option>
-				  		<option value='12'>Movies</option>
-				  		<option value='13'>TV</option>
-				  		<option value='14'>Digital Grout</option>
-				  		<option value='15'>Widro.com</option>
-				  </select>
+					<?php include('components/categorydd.php'); ?>
+				</div>
+
+				<div class="input-group">
+					<?php include('components/tagdd.php'); ?>
 				</div>
 
 

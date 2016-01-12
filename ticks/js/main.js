@@ -63,8 +63,10 @@ jQuery(document).ready(function($){ //fire on DOM ready
 	  var insert_tick_name = $('#insert_tick_name').val();
 	  alert(insert_tick_name);
 	  var tickform_dateoverride = $('#tickform_dateoverride').val();
-	  var tickform_category = $('#tickform_category').val();
-      insert_tick_master({'submit':true, 'tick_name':insert_tick_name, 'tickform_dateoverride':tickform_dateoverride, 'tickform_category':tickform_category});
+      var tickform_category = $('#tickform_category').val();
+      var tickform_tag_id = $('#tickform_tag_id').val();
+      alert(tickform_tag_id);
+      insert_tick_master({'submit':true, 'tick_name':insert_tick_name, 'tickform_dateoverride':tickform_dateoverride, 'tickform_category':tickform_category, 'tickform_tag_id':tickform_tag_id});
     });
 
 
