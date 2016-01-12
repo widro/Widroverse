@@ -29,8 +29,30 @@ if($action=="get_tickstream_fake"){
 }
 
 if($action=="get_tickstream"){
+
+	if($_GET['category_id']){
+		$category_id = $_GET['category_id'];
+	}
+	else{
+		$category_id = "";
+	}
+
+	if($_GET['tick_date_start']){
+		$tick_date_start = $_GET['tick_date_start'];
+	}
+	else{
+		$tick_date_start = "";
+	}
+
+	if($_GET['tick_date_end']){
+		$tick_date_end = $_GET['tick_date_end'];
+	}
+	else{
+		$tick_date_end = "";
+	}
+
 	$tick = new Tick;
-	$allticks = $tick->list_ticks('');
+	$allticks = $tick->list_ticks($category_id, $tick_date_start, $tick_date_end);
 
 	foreach($allticks as $thistick){
 		$tick_name = $thistick['tick_name'];
