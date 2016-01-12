@@ -2,17 +2,9 @@
         $('#tickstream_content').load('http://'+document.domain+'/ticks/loader.php?action=get_tickstream');
         $('#active_books_content').load('http://'+document.domain+'/ticks/loader.php?action=get_active_books');
         $('#active_games_content').load('http://'+document.domain+'/ticks/loader.php?action=get_active_games');
-        $('#active_inventory').load('http://'+document.domain+'/ticks/loader.php?action=get_inventory');
+        //$('#active_inventory').load('http://'+document.domain+'/ticks/loader.php?action=get_inventory');
         $('#active_stats').load('http://'+document.domain+'/ticks/loader.php?action=get_stats');
     });
-
-
-
-
-
-
-
-
 
 	function refreshtickstream(){
 		$('#tickstream_content').load('http://widroverse.localhost/ticks/loader.php?action=get_tickstream');

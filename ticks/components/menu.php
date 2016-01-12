@@ -43,7 +43,9 @@
         <li class="dropdown">
           <a href="inventory.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inventory <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="inventory.php">Mugs</a></li>
+            <li><a href="inventory.php?inventory_type=mug">Mugs</a></li>
+            <li><a href="inventory.php?inventory_type=amiibo">Amiibo</a></li>
+            <li><a href="inventory.php?inventory_type=pillow">Pillow</a></li>
           </ul>
         </li>
         <li><a href="#">Scavenger Hunt</a></li>

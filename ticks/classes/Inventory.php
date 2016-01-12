@@ -5,12 +5,17 @@ include('config/dbconnect.php');
 class Inventory{
 
 
-	function list_inventory(){
+	function list_inventory($inventory_type_input){
+
+		if($inventory_type_input!=''){
+			$sqladd = "WHERE inventory_type = '$inventory_type_input'";
+		}
 
 		$all_inventorys = array();
 
 		$sql_inventory = "
 		select * from inventory
+		$sqladd
 		order by inventory_id DESC
 		";
 

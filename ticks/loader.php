@@ -160,7 +160,7 @@ if($action=="get_active_games"){
 
 if($action=="get_inventory"){
 	$inventory = new Inventory;
-	$allinventory = $inventory->list_inventory();
+	$allinventory = $inventory->list_inventory($_GET['inventory_type']);
 
 	foreach($allinventory as $thisinventory){
 		$inventory_id = $thisinventory['inventory_id'];
