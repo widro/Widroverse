@@ -88,10 +88,6 @@
 				  		<option value='17'>At The Gotham</option>
 				  		<option value='18'>1upGuide</option>
 				  		<option value='19'>Widroverse</option>
-
-
-
-
 				  </select>
 				</div>
 

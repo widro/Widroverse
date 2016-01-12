@@ -38,14 +38,24 @@
             <li><a href="#">Digital Grout</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Widro.com</a></li>
+            <li><a href="#">Diehard Gamefan</a></li>
+            <li><a href="#">At The Gotham</a></li>
+            <li><a href="#">1upGuide</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Widroverse</a></li>
+
+
+
+
           </ul>
         </li>
         <li class="dropdown">
           <a href="inventory.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inventory <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="inventory.php?inventory_type=mug">Mugs</a></li>
+            <li><a href="inventory.php?inventory_type=mug">Mug</a></li>
             <li><a href="inventory.php?inventory_type=amiibo">Amiibo</a></li>
             <li><a href="inventory.php?inventory_type=pillow">Pillow</a></li>
+            <li><a href="inventory.php?inventory_type=clock">Clock</a></li>
           </ul>
         </li>
         <li><a href="#">Scavenger Hunt</a></li>
