@@ -80,6 +80,13 @@ if($action=="get_tickstream"){
 			$description = "Read a chapter in <a href=#>".$bookinfo['book_name']."</a>!";
 		}
 
+		if($category_id==1){
+			$tag = new Tag;
+			$taginfo = $tag->get_tag_by_id($active_id);
+
+			$description = "Something to do with <a href=#>".$taginfo['tag_name']."</a>!";
+		}
+
 		echo'
 			<div class="media tickstream_cell">
 			  <div class="media-left">
