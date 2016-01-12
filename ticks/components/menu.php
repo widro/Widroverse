@@ -55,6 +55,8 @@
             <li><a href="inventory.php?inventory_type=amiibo">Amiibo</a></li>
             <li><a href="inventory.php?inventory_type=pillow">Pillow</a></li>
             <li><a href="inventory.php?inventory_type=clock">Clock</a></li>
+            <li><a href="inventory.php?inventory_type=homeitems">homeitems</a></li>
+            <li><a href="inventory.php?inventory_type=psvitaspecial">psvitaspecial</a></li>
           </ul>
         </li>
         <li><a href="recipes.php">Recipes</a></li>
