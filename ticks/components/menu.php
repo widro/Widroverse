@@ -16,33 +16,32 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="#">TickStats</a></li>
-        <li><a href="#">Checklists</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Life</a></li>
-            <li><a href="#">Food</a></li>
-            <li><a href="#">Cooking</a></li>
-            <li><a href="#">Exercise</a></li>
-            <li><a href="#">Inventory</a></li>
+            <li><a href="/ticks/ticks.php?category_id=1">Life</a></li>
+            <li><a href="/ticks/ticks.php?category_id=3">Food</a></li>
+            <li><a href="/ticks/ticks.php?category_id=4">Cooking</a></li>
+            <li><a href="/ticks/ticks.php?category_id=5">Exercise</a></li>
+            <li><a href="/ticks/ticks.php?category_id=11">Inventory</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Video Games</a></li>
-            <li><a href="#">Books</a></li>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">TV</a></li>
-            <li><a href="#">Music</a></li>
+            <li><a href="/ticks/ticks.php?category_id=2">Video Games</a></li>
+            <li><a href="/ticks/ticks.php?category_id=6">Books</a></li>
+            <li><a href="/ticks/ticks.php?category_id=12">Movies</a></li>
+            <li><a href="/ticks/ticks.php?category_id=12">TV</a></li>
+            <li><a href="/ticks/ticks.php?category_id=10">Music</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Inside Pulse</a></li>
-            <li><a href="#">GameCo</a></li>
-            <li><a href="#">PANOS Brands</a></li>
-            <li><a href="#">Digital Grout</a></li>
+            <li><a href="/ticks/ticks.php?category_id=7">Inside Pulse</a></li>
+            <li><a href="/ticks/ticks.php?category_id=8">GameCo</a></li>
+            <li><a href="/ticks/ticks.php?category_id=9">PANOS Brands</a></li>
+            <li><a href="/ticks/ticks.php?category_id=14">Digital Grout</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Widro.com</a></li>
-            <li><a href="#">Diehard Gamefan</a></li>
-            <li><a href="#">At The Gotham</a></li>
-            <li><a href="#">1upGuide</a></li>
+            <li><a href="/ticks/ticks.php?category_id=15">Widro.com</a></li>
+            <li><a href="/ticks/ticks.php?category_id=16">Diehard Gamefan</a></li>
+            <li><a href="/ticks/ticks.php?category_id=17">At The Gotham</a></li>
+            <li><a href="/ticks/ticks.php?category_id=18">1upGuide</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Widroverse</a></li>
+            <li><a href="/ticks/ticks.php?category_id=19">Widroverse</a></li>
 
 
 
@@ -59,6 +58,7 @@
           </ul>
         </li>
         <li><a href="#">Scavenger Hunt</a></li>
+        <li><a href="#">Checklists</a></li>
         <li><a href="#">FAQ</a></li>
       </ul>
       <!--

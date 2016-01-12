@@ -1,14 +1,32 @@
     $(function(){
-        $('#tickstream_content').load('http://'+document.domain+'/ticks/loader.php?action=get_tickstream&category_id=7&tick_date_start=2016-01-07&tick_date_end=2016-01-09');
+        $('#tickstream_content').load('http://'+document.domain+'/ticks/loader.php?action=get_tickstream');
         $('#active_books_content').load('http://'+document.domain+'/ticks/loader.php?action=get_active_books');
         $('#active_games_content').load('http://'+document.domain+'/ticks/loader.php?action=get_active_games');
         //$('#active_inventory').load('http://'+document.domain+'/ticks/loader.php?action=get_inventory');
         $('#active_stats').load('http://'+document.domain+'/ticks/loader.php?action=get_stats');
     });
 
-	function refreshtickstream(){
-		$('#tickstream_content').load('http://widroverse.localhost/ticks/loader.php?action=get_tickstream');
-              alert("tickstream refrehsed!");
+	function refreshtickstream(category_id, tick_date_start, tick_date_end){
+
+        $('#tickstream_content').html('<img src="/ticks/images/ajaxloading_pie.gif">');
+
+        var url = "http://widroverse.localhost/ticks/loader.php?action=get_tickstream";
+
+        if(category_id){
+            url += "&category_id="+category_id;
+        }
+
+        if(tick_date_start){
+            url += "&tick_date_start="+tick_date_start;
+        }
+
+        if(tick_date_end){
+            url += "&tick_date_end="+tick_date_end;
+        }
+        setTimeout(function(){
+          $('#tickstream_content').load(url);
+        }, 300);
+		
 	}
 
 
@@ -21,7 +39,7 @@
 
 	function insert_tick_master(data){
         $.ajax({
-            url: '../loader.php?action=insert_tick',
+            url: '/ticks/loader.php?action=insert_tick',
             type: 'POST',
             data: data, // An object with the key 'submit' and value 'true;
             success: function (result) {
@@ -51,18 +69,31 @@ jQuery(document).ready(function($){ //fire on DOM ready
 
 
 
-	 $(document).on("click",".quicktickbutton",function(e){
+     $(document).on("click",".reloadtickstream",function(e){
 
-    	var quick_tick_button_id = $(this).attr('id');
-    	var quick_tick_vars = quick_tick_button_id.split("|");
+        var reloadtickstream_id = $(this).attr('id');
+        var reloadtickstream_vars = reloadtickstream_id.split("|");
 
-    	var active_id = quick_tick_vars[0].substring(2);
-    	var category_id = quick_tick_vars[1].substring(3);
-    	var tick_name = quick_tick_vars[2].replace("_", " ");;
+        var category_id = reloadtickstream_vars[0].substring(1);
+        var tick_date_start = reloadtickstream_vars[1].substring(1);
+        var tick_date_end = reloadtickstream_vars[1].substring(1);
+
+        refreshtickstream(category_id, tick_date_start, tick_date_end)
+     });
+
+
+     $(document).on("click",".quicktickbutton",function(e){
+
+        var quick_tick_button_id = $(this).attr('id');
+        var quick_tick_vars = quick_tick_button_id.split("|");
+
+        var active_id = quick_tick_vars[0].substring(2);
+        var category_id = quick_tick_vars[1].substring(3);
+        var tick_name = quick_tick_vars[2].replace("_", " ");;
 
       insert_tick_master({'submit':true, 'tick_name':tick_name, 'category':category_id, 'active_id':active_id});
 
-	 });
+     });
 
 
 
