@@ -11,7 +11,6 @@ class Recipe{
 
 		$sql_recipe = "
 		select * from recipes
-		where recipe_status = 1
 		order by recipe_id DESC
 		";
 

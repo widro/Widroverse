@@ -4,6 +4,7 @@
         $('#active_games_content').load('http://'+document.domain+'/ticks/loader.php?action=get_active_games');
         //$('#active_inventory').load('http://'+document.domain+'/ticks/loader.php?action=get_inventory');
         $('#active_stats').load('http://'+document.domain+'/ticks/loader.php?action=get_stats');
+        $('#active_recipes').load('http://'+document.domain+'/ticks/loader.php?action=get_active_recipes');
     });
 
 	function refreshtickstream(category_id, tick_date_start, tick_date_end){

@@ -57,6 +57,7 @@
             <li><a href="inventory.php?inventory_type=clock">Clock</a></li>
           </ul>
         </li>
+        <li><a href="recipes.php">Recipes</a></li>
         <li><a href="#">Scavenger Hunt</a></li>
         <li><a href="#">Checklists</a></li>
         <li><a href="#">FAQ</a></li>

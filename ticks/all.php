@@ -234,6 +234,13 @@
 
 
 
+			<div class="col-lg-12 container_quickticks">
+				<h2>Recipes</h2>
+				<div id="active_recipes"></div>
+			</div>
+
+
+
 
 
 

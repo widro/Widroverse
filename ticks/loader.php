@@ -180,6 +180,26 @@ if($action=="get_active_games"){
 	}
 }
 
+if($action=="get_active_recipes"){
+	$recipe = new Recipe;
+	$allrecipes = $recipe->list_recipes();
+
+	foreach($allrecipes as $thisrecipe){
+		$recipe_id = $thisrecipe['recipe_id'];
+		$recipe_name = $thisrecipe['recipe_name'];
+		$recipe_image = $thisrecipe['recipe_image'];
+		$recipe_status = $thisrecipe['recipe_status'];
+
+		echo'
+			<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive quicktickbutton" src="'.$recipe_image.'" alt="" id="id'.$recipe_id.'|cat6|chapter_complete" alt="'.$recipe_name.'" style="height:250px;">
+                </a>
+            </div>
+			';
+	}
+}
+
 if($action=="get_inventory"){
 	$inventory = new Inventory;
 	$allinventory = $inventory->list_inventory($_GET['inventory_type']);
