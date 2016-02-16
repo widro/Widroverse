@@ -27,23 +27,37 @@ body{
 }
 div.leftsidebar{
 	border:1px solid #000;
+	border-radius: 5px;
 }
 
 div.leftsidebar h2{
 	background:#ff0000;
+	border-radius: 5px;
 	color:#fff;
+	margin:0;
 }
 
 
 
 div.rightsidebar{
 	border:1px solid #000;
+	border-radius: 5px;
 }
 
 div.rightsidebar h2{
 	background:#990000;
+	border-radius: 5px;
 	color:#fff;
+	margin:0;
 }
+
+
+
+
+
+
+
+
 </style>
 
 
@@ -135,7 +149,26 @@ div.rightsidebar h2{
 			<p>kjdsfh lksjhdflkj sahdflkj kjbufihdif dpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93oui4bft g93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93oui4 bftg93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93oui4bf tg93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93 oui4bftg93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93 oui4bftg93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93oui4bftg93ui48b </p>
 		</div>
 	</div>
-	<div class="col-lg-7">center</div>
+	<div class="col-lg-7">
+
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+		<img src="images/tempcenter.jpg"><br>
+
+
+	</div>
 	<div class="col-lg-3">
 		<div class="rightsidebar">
 			<h2>Right Sidebar</h2>
