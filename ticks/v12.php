@@ -28,6 +28,7 @@ body{
 div.leftsidebar{
 	border:1px solid #000;
 	border-radius: 5px;
+	margin-top:10px;
 }
 
 div.leftsidebar h2{
@@ -42,6 +43,7 @@ div.leftsidebar h2{
 div.rightsidebar{
 	border:1px solid #000;
 	border-radius: 5px;
+	margin-top:10px;
 }
 
 div.rightsidebar h2{
@@ -52,33 +54,7 @@ div.rightsidebar h2{
 }
 
 
-
-
-
-
-
-
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </head>
 
 <body>
@@ -144,10 +120,32 @@ div.rightsidebar h2{
 
 <div class="container">
 	<div class="col-lg-2">
-		<div class="leftsidebar">
-			<h2>Left Sidebar</h2>
-			<p>kjdsfh lksjhdflkj sahdflkj kjbufihdif dpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93oui4bft g93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93oui4 bftg93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93oui4bf tg93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93 oui4bftg93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93 oui4bftg93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93oui4bftg93ui48b </p>
+		<div class="leftsidebar top10authors">
+			<h2>Top 10 Authors</h2>
+			<p>Content here</p>
 		</div>
+
+
+		<div class="leftsidebar standings">
+			<h2>Standings</h2>
+			<p>Content here</p>
+		</div>
+
+		<div class="leftsidebar recentcomments">
+			<h2>Recent Comments</h2>
+			<p>Content here</p>
+		</div>
+
+		<div class="leftsidebar facebook">
+			<h2>Facebook</h2>
+			<p>Content here</p>
+		</div>
+
+		<div class="leftsidebar twitter">
+			<h2>Twitter</h2>
+			<p>Content here</p>
+		</div>
+
 	</div>
 	<div class="col-lg-7">
 
@@ -170,10 +168,39 @@ div.rightsidebar h2{
 
 	</div>
 	<div class="col-lg-3">
-		<div class="rightsidebar">
-			<h2>Right Sidebar</h2>
-			<p>kjdsfh lksjhdflkj sahdflkj kjbufihdif dpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93oui4bft g93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93oui4 bftg93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93oui4bf tg93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93 oui4bftg93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93 oui4bftg93ui48b kjdsfh lksjhdflkj sahdflkj kjbufihdifdpffhy sdyufg0 7gf9 7gr4f9 94r8fgt2948efhg 9384rfbhg93oui4bftg93ui48b </p>
+		<div class="rightsidebar poll">
+			<h2>Vote Now</h2>
+			<p>Content here</p>
 		</div>
+
+		<div class="rightsidebar raw">
+			<h2>Monday Night Raw</h2>
+			<p>Content here</p>
+		</div>
+
+		<div class="rightsidebar tna">
+			<h2>TNA Impact</h2>
+			<p>Content here</p>
+		</div>
+
+		<div class="rightsidebar luchaunderground">
+			<h2>Lucha Underground</h2>
+			<p>Content here</p>
+		</div>
+
+		<div class="rightsidebar smackdown">
+			<h2>Thursday Night Smackdown</h2>
+			<p>Content here</p>
+		</div>
+
+		<div class="rightsidebar titlehistory">
+			<h2>Title History</h2>
+			<p>Content here</p>
+		</div>
+
+
+
+
 	</div>
 </div>
 
