@@ -120,10 +120,10 @@ $loser = stripslashes ($loser);
 $date= $row['date2'];
 $display_block .= '
 <tr>
-<td>$date</td>
-<td>$title</td>
-<td>$winner</td>
-<td>$loser</td>
+<td>'.$date.'</td>
+<td>'.$title.'</td>
+<td>'.$winner.'</td>
+<td>'.$loser.'</td>
 <td><a href="">Edit</a></td>
 <td><a href="javascript:confirm(\'delete for sures?\')">Delete</a></td>
 
