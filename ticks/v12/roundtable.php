@@ -7,7 +7,8 @@
 
 
 
-<img src="http://media.insidepulse.com/zones/wrestling/uploads/2014/08/tuesdayraw1600.jpg" alt="" width="650"></div>
+<img src="http://media.insidepulse.com/zones/wrestling/uploads/2014/08/tuesdayraw1600.jpg" alt="" width="650">
+
 <p>WWE had another new Raw on Monday, what did the Pulse Wrestling crew think of the show?</p>
 <div style="height: 2px; background: #ad151d; width: 100%;"></div>
 <p><img src="http://media.insidepulse.com/shared/images/v7/default120x120_.jpg" alt="" width="120" height="120" align="left"></p>

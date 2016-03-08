@@ -1,9 +1,7 @@
 <?php
 /* db connection  */
-$dbname = "pulse_forums";
+include('../config/dbconnect.php'); 
 
-$connection = mysql_connect("207.44.238.97", "pulse_forums", "GnBJwsGa4v46xePW") or die("Couldn't connect.");
-$db = mysql_select_db($dbname) or die("Couldn't select database");
 
 // get variables
 
