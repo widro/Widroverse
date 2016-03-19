@@ -155,3 +155,11 @@ echo $yup;
 
 
 ?>
+
+
+
+  
+  <div id="node-page-full-group-body-and-aside" class="group-body-and-aside"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><div id="grnhse_app"></div>
+<script src="https://boards.greenhouse.io/embed/job_board/js?for=medecinssansfrontieres"></script></div></div></div></div></div>
+
+  </div>
