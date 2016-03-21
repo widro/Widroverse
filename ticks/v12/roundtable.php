@@ -3,7 +3,37 @@
 
 
 
+<style>
 
+div.roundtable_cell{
+
+	
+}
+
+div.roundtable_cell:hover{
+
+	
+}
+
+div.roundtable_cell img{
+
+	
+}
+
+div.roundtable_cell h3{
+
+	
+}
+
+
+div.roundtable_cell a{
+
+	
+}
+
+
+
+</style>
 
 
 
@@ -16,7 +46,7 @@
 <p>1. Triple H &amp; Dean Ambrose Start the Show: Ambrose and Triple H did a good job in this segment, reminding fans of the abuse Roman Reigns suffered at the hands of Triple H all while giving Dean the spotlight for another crazy segment of Ambrose ramblings. The fans were behind Ambrose the whole way on this and so was I, allowing Ambrose to be more reckless and off the wall helps his character, all while building his persona up more. A good way to open Raw as Ambrose said he wanted a title shot. Triple H, in classic heel style, said he’d let Ambrose know his answer later and told Ambrose he’d be in a match with Alberto Del Rio later in the night. The moment was a little longer than necessary but not terribly drawn out.</p>
 <p>2. Becky Lynch v. Sasha Banks: This was disappointing from the start of the match to the finish. No time to shine and, with it not given priority ranking in the night, it was a let down all around. WWE can’t keep half-assing the Women’s division if they want us to care.</p>
 <p><a href="http://insidepulse.com/2016/03/01/10-thoughts-on-wwe-monday-night-raw-02-29-2016-undertaker-confront-vince-mcmahon-becky-lynch-v-sasha-banks-albert-del-rio-v-dean-ambrose/">Check out my full 10 Thoughts on Raw!</a></p>
-<p><img src="http://media.insidepulse.com/shared/images/v7/default120x120_.jpg" alt="" width="120" height="120" align="left"></p>
+<p><img src="../images/widro.png" alt="" width="120" height="120" align="left"></p>
 <h3>JT</h3>
 <p>– Standard Triple H heel promo to start, and as usual for Raw he goes on for waaaay too long. Ambrose comes out and livens things up a bit, but it’s still a hell of a lot of talking.<br>
 – Becky Lynch vs Sasha Banks was an entertaining match, with both women working hard, until the ridiculous double pin finish.<br>
