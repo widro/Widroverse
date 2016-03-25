@@ -91,6 +91,111 @@ div.roundtable_cell_bottom{
 
 
 
+<img src="http://diehardgamefan.com/wp-content/uploads/2014/12/collectionrt650.jpg">
+
+<i>Every week, the Diehard GameFAN team adds new games to their collections. Sometimes they are new releases, physical or digital, DLC or full games, but they are all building blocks in our greater collections. </i>
+
+
+<div class="roundtable_cell">
+	<div class="roundtable_cell_top"><img src="http://diehardgamefan.com/wp-content/uploads/2015/08/alexlucardfinished-120x120.jpg" class="avatar"><h1>Lucard</h1><h4>Twitter: <a href="https://twitter.com/Alexanderlucard">@Alexanderlucard</a> | <a href="http://diehardgamefan.com/diehard/alexlucard/">Full Archive</a></h4></div>
+	<div class="roundtable_cell_center">
+		<p>1. Triple H &amp; Dean Ambrose Start the Show: Ambrose and Triple H did a good job in this segment, reminding fans of the abuse Roman Reigns suffered at the hands of Triple H all while giving Dean the spotlight for another crazy segment of Ambrose ramblings.<img src="http://insidepulse.com/wp-content/uploads/2011/03/WrestleMania-14austinhbk.jpg">The fans were behind Ambrose the whole way on this and so was I, allowing Ambrose to be more reckless and off the wall helps his character, all while building his persona up more. A good way to open Raw as Ambrose said he wanted a title shot. Triple H, in classic heel style, said he’d let Ambrose know his answer later and told Ambrose he’d be in a match with Alberto Del Rio later in the night. The moment was a little longer than necessary but not terribly drawn out.</p>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+<div class="roundtable_cell">
+	<div class="roundtable_cell_top"><img src="http://diehardgamefan.com/wp-content/uploads/2008/03/mark120.JPG" class="avatar"><h1>Mark B.</h1><h4>Twitter: <a href="https://twitter.com/markbwriting">@markbwriting</a> | <a href="http://diehardgamefan.com/diehard/markb/">Full Archive</a></h4></div>
+	<div class="roundtable_cell_center">
+		<p>1. Triple H &amp; Dean Ambrose Start the Show: Ambrose and Triple H did a good job in this segment, reminding fans of the abuse Roman Reigns suffered at the hands of Triple H all while giving Dean the spotlight for another crazy segment of Ambrose ramblings.<img src="http://insidepulse.com/wp-content/uploads/2011/03/WrestleMania-14austinhbk.jpg">The fans were behind Ambrose the whole way on this and so was I, allowing Ambrose to be more reckless and off the wall helps his character, all while building his persona up more. A good way to open Raw as Ambrose said he wanted a title shot. Triple H, in classic heel style, said he’d let Ambrose know his answer later and told Ambrose he’d be in a match with Alberto Del Rio later in the night. The moment was a little longer than necessary but not terribly drawn out.</p>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+
+
+<div class="roundtable_cell">
+	<div class="roundtable_cell_top"><img src="http://diehardgamefan.com/wp-content/uploads/2008/03/mark120.JPG" class="avatar"><h1>Ashe Collins</h1><h4>Twitter: <a href="https://twitter.com/DHGFAshe">@DHGFAshe</a> | <a href="http://diehardgamefan.com/diehard/ashe5k/">Full Archive</a></h4></div>
+	<div class="roundtable_cell_center">
+		<p>1. Triple H &amp; Dean Ambrose Start the Show: Ambrose and Triple H did a good job in this segment, reminding fans of the abuse Roman Reigns suffered at the hands of Triple H all while giving Dean the spotlight for another crazy segment of Ambrose ramblings.<img src="http://insidepulse.com/wp-content/uploads/2011/03/WrestleMania-14austinhbk.jpg">The fans were behind Ambrose the whole way on this and so was I, allowing Ambrose to be more reckless and off the wall helps his character, all while building his persona up more. A good way to open Raw as Ambrose said he wanted a title shot. Triple H, in classic heel style, said he’d let Ambrose know his answer later and told Ambrose he’d be in a match with Alberto Del Rio later in the night. The moment was a little longer than necessary but not terribly drawn out.</p>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+
+
+<div class="roundtable_cell">
+	<div class="roundtable_cell_top"><img src="http://diehardgamefan.com/wp-content/uploads/2015/09/aicastart-120x120.jpg" class="avatar"><h1>Aileen Coe</h1><h4>Twitter: <a href="https://twitter.com/DHGFAileen">@DHGFAileen</a> | <a href="http://diehardgamefan.com/diehard/hinata/">Full Archive</a></h4></div>
+	<div class="roundtable_cell_center">
+		<p>1. Triple H &amp; Dean Ambrose Start the Show: Ambrose and Triple H did a good job in this segment, reminding fans of the abuse Roman Reigns suffered at the hands of Triple H all while giving Dean the spotlight for another crazy segment of Ambrose ramblings.<img src="http://insidepulse.com/wp-content/uploads/2011/03/WrestleMania-14austinhbk.jpg">The fans were behind Ambrose the whole way on this and so was I, allowing Ambrose to be more reckless and off the wall helps his character, all while building his persona up more. A good way to open Raw as Ambrose said he wanted a title shot. Triple H, in classic heel style, said he’d let Ambrose know his answer later and told Ambrose he’d be in a match with Alberto Del Rio later in the night. The moment was a little longer than necessary but not terribly drawn out.</p>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+
+<div class="roundtable_cell">
+	<div class="roundtable_cell_top"><img src="http://diehardgamefan.com/wp-content/uploads/2012/12/Crystalavatar120.png" class="avatar"><h1>Crystal Shards</h1><h4>Twitter: <a href="https://twitter.com/DHGFCrystal">@DHGFCrystal</a> | <a href="http://diehardgamefan.com/diehard/crystalshards/">Full Archive</a></h4></div>
+	<div class="roundtable_cell_center">
+		<p>1. Triple H &amp; Dean Ambrose Start the Show: Ambrose and Triple H did a good job in this segment, reminding fans of the abuse Roman Reigns suffered at the hands of Triple H all while giving Dean the spotlight for another crazy segment of Ambrose ramblings.<img src="http://insidepulse.com/wp-content/uploads/2011/03/WrestleMania-14austinhbk.jpg">The fans were behind Ambrose the whole way on this and so was I, allowing Ambrose to be more reckless and off the wall helps his character, all while building his persona up more. A good way to open Raw as Ambrose said he wanted a title shot. Triple H, in classic heel style, said he’d let Ambrose know his answer later and told Ambrose he’d be in a match with Alberto Del Rio later in the night. The moment was a little longer than necessary but not terribly drawn out.</p>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+
+<div class="roundtable_cell">
+	<div class="roundtable_cell_top"><img src="http://diehardgamefan.com/wp-content/uploads/2014/04/diehardjack1-150x150.jpg" class="avatar"><h1>Aaron Sirios</h1><h4>Twitter: <a href="https://twitter.com/DHGFAaronS">@DHGFAaronS</a> | <a href="http://diehardgamefan.com/diehard/raziellich/">Full Archive</a></h4></div>
+	<div class="roundtable_cell_center">
+		<p>1. Triple H &amp; Dean Ambrose Start the Show: Ambrose and Triple H did a good job in this segment, reminding fans of the abuse Roman Reigns suffered at the hands of Triple H all while giving Dean the spotlight for another crazy segment of Ambrose ramblings.<img src="http://insidepulse.com/wp-content/uploads/2011/03/WrestleMania-14austinhbk.jpg">The fans were behind Ambrose the whole way on this and so was I, allowing Ambrose to be more reckless and off the wall helps his character, all while building his persona up more. A good way to open Raw as Ambrose said he wanted a title shot. Triple H, in classic heel style, said he’d let Ambrose know his answer later and told Ambrose he’d be in a match with Alberto Del Rio later in the night. The moment was a little longer than necessary but not terribly drawn out.</p>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+
+<div class="roundtable_cell">
+	<div class="roundtable_cell_top"><img src="http://media.insidepulse.com/zones/diehardgamefan/uploads/2011/02/cloud.jpg" class="avatar"><h1>Sean Madson</h1><h4>Twitter: <a href="https://twitter.com/DHGFMadson">@DHGFMadson</a> | <a href="http://diehardgamefan.com/diehard/seanmadson/">Full Archive</a></h4></div>
+	<div class="roundtable_cell_center">
+		<p>1. Triple H &amp; Dean Ambrose Start the Show: Ambrose and Triple H did a good job in this segment, reminding fans of the abuse Roman Reigns suffered at the hands of Triple H all while giving Dean the spotlight for another crazy segment of Ambrose ramblings.<img src="http://insidepulse.com/wp-content/uploads/2011/03/WrestleMania-14austinhbk.jpg">The fans were behind Ambrose the whole way on this and so was I, allowing Ambrose to be more reckless and off the wall helps his character, all while building his persona up more. A good way to open Raw as Ambrose said he wanted a title shot. Triple H, in classic heel style, said he’d let Ambrose know his answer later and told Ambrose he’d be in a match with Alberto Del Rio later in the night. The moment was a little longer than necessary but not terribly drawn out.</p>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+<div class="roundtable_cell">
+	<div class="roundtable_cell_top"><img src="http://diehardgamefan.com/wp-content/uploads/2008/04/yeager-1.jpg" class="avatar"><h1>Matt Yaeger</h1><h4>Twitter: <a href="https://twitter.com/Whipt1">@Whipt1</a> | <a href="http://diehardgamefan.com/diehard/mattyeager/">Full Archive</a></h4></div>
+	<div class="roundtable_cell_center">
+		<p>1. Triple H &amp; Dean Ambrose Start the Show: Ambrose and Triple H did a good job in this segment, reminding fans of the abuse Roman Reigns suffered at the hands of Triple H all while giving Dean the spotlight for another crazy segment of Ambrose ramblings.<img src="http://insidepulse.com/wp-content/uploads/2011/03/WrestleMania-14austinhbk.jpg">The fans were behind Ambrose the whole way on this and so was I, allowing Ambrose to be more reckless and off the wall helps his character, all while building his persona up more. A good way to open Raw as Ambrose said he wanted a title shot. Triple H, in classic heel style, said he’d let Ambrose know his answer later and told Ambrose he’d be in a match with Alberto Del Rio later in the night. The moment was a little longer than necessary but not terribly drawn out.</p>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+<div class="roundtable_cell">
+	<div class="roundtable_cell_top"><img src="http://diehardgamefan.com/wp-content/uploads/2016/02/steven-kess-1-120x120.jpg" class="avatar"><h1>Steven Kess</h1><h4>Tumblr: <a href="http://a-faceless-name.tumblr.com/">@a-faceless-name</a> | <a href="http://diehardgamefan.com/diehard/skess/">Full Archive</a></h4></div>
+	<div class="roundtable_cell_center">
+		<p>1. Triple H &amp; Dean Ambrose Start the Show: Ambrose and Triple H did a good job in this segment, reminding fans of the abuse Roman Reigns suffered at the hands of Triple H all while giving Dean the spotlight for another crazy segment of Ambrose ramblings.<img src="http://insidepulse.com/wp-content/uploads/2011/03/WrestleMania-14austinhbk.jpg">The fans were behind Ambrose the whole way on this and so was I, allowing Ambrose to be more reckless and off the wall helps his character, all while building his persona up more. A good way to open Raw as Ambrose said he wanted a title shot. Triple H, in classic heel style, said he’d let Ambrose know his answer later and told Ambrose he’d be in a match with Alberto Del Rio later in the night. The moment was a little longer than necessary but not terribly drawn out.</p>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+
+
+
+<div class="roundtable_cell">
+	<div class="roundtable_cell_top"><img src="http://diehardgamefan.com/wp-content/uploads/2016/01/octopus-1-120x120.jpg" class="avatar"><h1>DTN</h1><h4>Twitter: <a href="https://twitter.com/shizuoya">@shizuoya</a> | <a href="http://diehardgamefan.com/diehard/deliay/">Full Archive</a></h4></div>
+	<div class="roundtable_cell_center">
+		<p>1. Triple H &amp; Dean Ambrose Start the Show: Ambrose and Triple H did a good job in this segment, reminding fans of the abuse Roman Reigns suffered at the hands of Triple H all while giving Dean the spotlight for another crazy segment of Ambrose ramblings.<img src="http://insidepulse.com/wp-content/uploads/2011/03/WrestleMania-14austinhbk.jpg">The fans were behind Ambrose the whole way on this and so was I, allowing Ambrose to be more reckless and off the wall helps his character, all while building his persona up more. A good way to open Raw as Ambrose said he wanted a title shot. Triple H, in classic heel style, said he’d let Ambrose know his answer later and told Ambrose he’d be in a match with Alberto Del Rio later in the night. The moment was a little longer than necessary but not terribly drawn out.</p>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+
+<div class="roundtable_cell">
+	<div class="roundtable_cell_top"><img src="http://diehardgamefan.com/wp-content/uploads/2009/01/widro-150x150.png" class="avatar"><h1>Jonathan Widro</h1><h4>Twitter: <a href="https://twitter.com/Widro">@Widro</a> | <a href="http://diehardgamefan.com/diehard/widro/">Full Archive</a></h4></div>
+	<div class="roundtable_cell_center">
+		<p>1. Triple H &amp; Dean Ambrose Start the Show: Ambrose and Triple H did a good job in this segment, reminding fans of the abuse Roman Reigns suffered at the hands of Triple H all while giving Dean the spotlight for another crazy segment of Ambrose ramblings.<img src="http://insidepulse.com/wp-content/uploads/2011/03/WrestleMania-14austinhbk.jpg">The fans were behind Ambrose the whole way on this and so was I, allowing Ambrose to be more reckless and off the wall helps his character, all while building his persona up more. A good way to open Raw as Ambrose said he wanted a title shot. Triple H, in classic heel style, said he’d let Ambrose know his answer later and told Ambrose he’d be in a match with Alberto Del Rio later in the night. The moment was a little longer than necessary but not terribly drawn out.</p>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+
 
 
 
