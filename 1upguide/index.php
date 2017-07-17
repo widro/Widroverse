@@ -89,8 +89,9 @@ else{
 		$gameid = $thisgame['gameid'];
 		$title = $thisgame['title'];
 		$boxfront = $thisgame['boxfront'];
-
-
+		if($boxfront==""){
+			$boxfront = "images/NSMBWii1upMushroom.png";
+		}
 		if($viewstyle == "grid"){
 		echo'
 			<div class="col-lg-3 col-md-4 col-xs-6 thumb" style="height:350px">

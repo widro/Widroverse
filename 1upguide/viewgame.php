@@ -39,6 +39,10 @@ error_reporting(E_ALL & ~E_NOTICE);
 	$gameid = $get_game_by_id['gameid'];
 	$title = $get_game_by_id['title'];
 	$boxfront = $get_game_by_id['boxfront'];
+	if($boxfront==""){
+		$boxfront = "images/NSMBWii1upMushroom.png";
+	}
+
 	$releasedate = $get_game_by_id['releasedate'];
 	$system = $get_game_by_id['system'];
 	$status = $get_game_by_id['status'];
@@ -64,23 +68,22 @@ error_reporting(E_ALL & ~E_NOTICE);
         </div>
 		<div class="col-lg-9 col-md-8 col-xs-6 thumb" style="height:350px">
 		Release Date: '.$releasedate.'<br>
-		system: '.$system.'<br>
-		status: '.$status.'<br>
-		franchise: '.$franchise.'<br>
-		developer: '.$developer.'<br>
-		publisher: '.$publisher.'<br>
-		genre: '.$genre.'<br>
-		beaten: '.$beaten.'<br>
-		currentbacklog: '.$currentbacklog.'<br>
-		backlog: '.$backlog.'<br>
-		neon: '.$neon.'<br>
-		twodee: '.$twodee.'<br>
-		retro: '.$retro.'<br>
-		neoncade: '.$neoncade.'<br>
-		elite: '.$elite.'<br>
-		eliterank: '.$eliterank.'<br>
-		the20v2: '.$the20v2.'<br>
-
+		system: <a href="index.php?system='.$system.'">'.$system.'</a><br>
+		status: <a href="index.php?status='.$status.'">'.$status.'</a><br>
+		franchise: <a href="index.php?franchise='.$franchise.'">'.$franchise.'</a><br>
+		developer: <a href="index.php?developer='.$developer.'">'.$developer.'</a><br>
+		publisher: <a href="index.php?publisher='.$publisher.'">'.$publisher.'</a><br>
+		genre: <a href="index.php?genre='.$genre.'">'.$genre.'</a><br>
+		beaten: <a href="index.php?beaten='.$beaten.'">'.$beaten.'</a><br>
+		currentbacklog: <a href="index.php?currentbacklog='.$currentbacklog.'">'.$currentbacklog.'</a><br>
+		backlog: <a href="index.php?backlog='.$backlog.'">'.$backlog.'</a><br>
+		neon: <a href="index.php?neon='.$neon.'">'.$neon.'</a><br>
+		twodee: <a href="index.php?twodee='.$twodee.'">'.$twodee.'</a><br>
+		retro: <a href="index.php?retro='.$retro.'">'.$retro.'</a><br>
+		neoncade: <a href="index.php?neoncade='.$neoncade.'">'.$neoncade.'</a><br>
+		elite: <a href="index.php?elite='.$elite.'">'.$elite.'</a><br>
+		eliterank: <a href="index.php?eliterank='.$eliterank.'">'.$eliterank.'</a><br>
+		the20v2: <a href="index.php?the20v2='.$the20v2.'">'.$the20v2.'</a><br>
 
 
 

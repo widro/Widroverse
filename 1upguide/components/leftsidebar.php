@@ -20,11 +20,22 @@ View style: <br>
 
 <h3>Key Franchises</h3>
 <ul>
-<li><a href="index.php?franchise=Yoshi">Yoshi</a></li>
-<li><a href="index.php?franchise=Kirby">Kirby</a></li>
-<li><a href="index.php?franchise=Mario_Kart">Mario_Kart</a></li>
-<li><a href="index.php?franchise=Zelda">Zelda</a></li>
-
+<li>
+	<a href="index.php?franchise=Yoshi">Yoshi</a> |
+	<a href="index.php?franchise=Yoshi&elite=yes">Elite</a>
+</li>
+<li>
+	<a href="index.php?franchise=Kirby">Kirby</a> |
+	<a href="index.php?franchise=Kirby&elite=yes">Elite</a>
+</li>
+<li>
+	<a href="index.php?franchise=Mario_Kart">Mario_Kart</a> |
+	<a href="index.php?franchise=Mario_Kart&elite=yes">Elite</a>
+</li>
+<li>
+	<a href="index.php?franchise=Zelda">Zelda</a> |
+	<a href="index.php?franchise=Zelda&elite=yes">Elite</a>
+</li>
 
 </ul>
 
