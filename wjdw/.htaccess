@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^.*..*\/([^\d\/]+)\/([0-9]+)\/([0-9]+)\/F.*HM.*MX.*$ ?$1$2=$3&%{QUERY_STRING}[L]
+</IfModule>
