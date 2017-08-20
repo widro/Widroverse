@@ -19,8 +19,7 @@
 
 
 			<?php
-				$game = new Game;
-				$menu_types = array('system', 'genre', 'developer', 'publisher', 'franchise', 'status');
+        $items = new Items;
 
 				foreach($menu_types as $type){
 					echo '
@@ -28,7 +27,7 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="text-transform: capitalize;">'.$type.' <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 					';
-					$parameters = $game->list_parameter($type, 20);
+					$parameters = $items->list_parameter("games", $type, 20, $link);
 					foreach($parameters as $entry){
 						echo "<li><a href=\"index.php?".$type."=".$entry['parameter']."\">".$entry['parameter']." (".$entry['total'].")</a></li>";
 					}

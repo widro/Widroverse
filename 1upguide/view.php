@@ -1,8 +1,24 @@
 <?php
 // Report all errors except E_NOTICE
 error_reporting(E_ALL & ~E_NOTICE);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+if($_GET['activebrand']){
+	$activebrand = $_GET['activebrand'];
+}
+
+////vars
+//games
+$allfields = array('gameid','releasedate','title','system','status','franchise','developer','publisher','genre','boxfront','beaten','currentbacklog','backlog','neon','twodee','retro','neoncade','elite','eliterank','the20v2');
+$dbtable = "games";
+$brandname = "1upGuide";
+$brandlogo = "";
+$menu_types = array('system', 'genre', 'developer', 'publisher', 'franchise', 'status');
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 ?>
-<?php include('Game.php'); ?>
+<?php include('Items.php'); ?>
 <html>
 <head>
 <title>1upGuide</title>
@@ -31,14 +47,15 @@ error_reporting(E_ALL & ~E_NOTICE);
 	<?php include('components/leftsidebar.php'); ?>
 	<div class="col-lg-10">
 <?php
+
 	$gameid = $_GET['gameid'];
-	$game = new Game;
-	$get_game_by_id = $game->get_game_by_id($gameid);
+	$items = new Items;
+	$get_item_by_id = $items->get_item_by_id($allfields, $dbtable, $gameid, $link);
 
 
-	$gameid = $get_game_by_id['gameid'];
-	$title = $get_game_by_id['title'];
-	$boxfront = $get_game_by_id['boxfront'];
+	$gameid = $get_item_by_id['gameid'];
+	$title = $get_item_by_id['title'];
+	$boxfront = $get_item_by_id['boxfront'];
 	if($boxfront==""){
 		$boxfront = "images/NSMBWii1upMushroom.png";
 	}
@@ -64,7 +81,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 	echo'
 		<h1>'.$title.'</h1>
 		<div class="col-lg-3 col-md-4 col-xs-6 thumb" style="height:350px">
-            <img class="img-responsive quicktickbutton" src="/1upguide/'.$boxfront.'" alt="" id="id'.$gameid.'|cat2|level_complete" alt="'.$title.'">
+            <img class="img-responsive quicktickbutton" src="http://widroverse.com/1upguide/'.$boxfront.'" alt="" id="id'.$gameid.'|cat2|level_complete" alt="'.$title.'">
         </div>
 		<div class="col-lg-9 col-md-8 col-xs-6 thumb" style="height:350px">
 		Release Date: '.$releasedate.'<br>

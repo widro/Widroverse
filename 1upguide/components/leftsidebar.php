@@ -3,6 +3,12 @@ View style: <br>
 <a href="index.php?setviewstyle=grid">Grid</a> | 
 <a href="index.php?setviewstyle=basiclist">Basic List</a> | 
  <br> <br>
+
+<?php
+if($brandname == "1upGuide"){
+?>
+
+
 <h3>Owned Physical</h3>
 <ul>
 <li><a href="index.php?status=OwnedPhysical">All</a></li>
@@ -44,20 +50,45 @@ View style: <br>
 <h3>Elite</h3>
 <ul>
 <li><a href="index.php?elite=yes">All</a></li>
+<li><a href="index.php?eliterank=100">Ranked</a></li>
 
 
 </ul>
 
 
+<h3>Top Devs</h3>
+<ul>
+<li><a href="index.php?developer=Housemarque">Housemarque</a></li>
+<li><a href="index.php?developer=Vanillaware">Vanillaware</a></li>
+</ul>
 
 
 </div>
 
+<?php
+}
+elseif($brandname == "WJDW"){
+?>
 
 
 
+<?php
+}
+elseif($brandname == "Movies"){
+?>
 
 
 
+<?php
+}
+else{
+?>
+<h3>Default</h3>
+<ul>
+<li><a href="index.php?status=OwnedPhysical">All</a></li>
+</ul>
+<?php
+}
+?>
 
 

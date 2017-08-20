@@ -6,8 +6,27 @@ if($_GET['setviewstyle']){
 	setcookie("viewstyle", $_GET['setviewstyle'], time()+3600000);  /* expire in 1 hour */
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+if($_GET['activebrand']){
+	$activebrand = $_GET['activebrand'];
+}
+
+////vars
+//games
+$allfields = array('gameid','releasedate','title','system','status','franchise','developer','publisher','genre','boxfront','beaten','currentbacklog','backlog','neon','twodee','retro','neoncade','elite','eliterank','the20v2');
+$dbtable = "games";
+$brandname = "1upGuide";
+$brandlogo = "";
+$menu_types = array('system', 'genre', 'developer', 'publisher', 'franchise', 'status');
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 ?>
-<?php include('Game.php'); ?>
+<?php 
+include('config/dbconnect.php');
+include('Items.php'); 
+?>
 <html>
 <head>
 <title>1upGuide</title>
@@ -56,7 +75,7 @@ else{
 
 	$params = array();
 
-	$allfields = array('gameid','releasedate','title','system','status','franchise','developer','publisher','genre','boxfront','beaten','currentbacklog','backlog','neon','twodee','retro','neoncade','elite','eliterank','the20v2');
+
 
 	foreach($allfields as $thisfield){
 		if($_GET[$thisfield]){
@@ -81,22 +100,22 @@ else{
 	}
 
 
-	$game = new Game;
-	$allgames = $game->list_games($params, $limit, $offset);
-	$totalgames = count($allgames);
+	$items = new Items;
+	$allitems = $items->list_items($allfields, $dbtable, $params, $limit, $offset, $link);
+	$totalitems = count($allitems);
 
-	foreach($allgames as $thisgame){
-		$gameid = $thisgame['gameid'];
-		$title = $thisgame['title'];
-		$boxfront = $thisgame['boxfront'];
+	foreach($allitems as $thisitem){
+		$gameid = $thisitem['gameid'];
+		$title = $thisitem['title'];
+		$boxfront = $thisitem['boxfront'];
 		if($boxfront==""){
 			$boxfront = "images/NSMBWii1upMushroom.png";
 		}
 		if($viewstyle == "grid"){
 		echo'
 			<div class="col-lg-3 col-md-4 col-xs-6 thumb" style="height:350px">
-                <a class="thumbnail" href="viewgame.php?gameid='.$gameid.'">
-                    <img class="img-responsive quicktickbutton" src="/1upguide/'.$boxfront.'" alt="" id="id'.$gameid.'|cat2|level_complete" alt="'.$title.'">
+                <a class="thumbnail" href="view.php?gameid='.$gameid.'">
+                    <img class="img-responsive quicktickbutton" src="http://widroverse.com/1upguide/'.$boxfront.'" alt="" id="id'.$gameid.'|cat2|level_complete" alt="'.$title.'">
                     <br>
                     '.$title.'
                 </a>
@@ -107,7 +126,7 @@ else{
 		elseif($viewstyle == "basiclist"){
 		echo'
 			<div class="col-lg-12 col-md-12 col-xs-12">
-                <a href="viewgame.php?gameid='.$gameid.'">
+                <a href="view.php?gameid='.$gameid.'">
                     '.$title.'
                 </a>
             </div>
