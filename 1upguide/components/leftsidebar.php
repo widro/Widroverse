@@ -5,21 +5,21 @@ View style: <br>
  <br> <br>
 
 <?php
-if($brandname == "1upGuide"){
+if($brandid == 1){
 ?>
 
 
 <h3>Owned Physical</h3>
 <ul>
-<li><a href="index.php?status=OwnedPhysical">All</a></li>
-<li><a href="index.php?status=OwnedPhysical&system=Playstation_Vita">Playstation_Vita</a></li>
-<li><a href="index.php?status=OwnedPhysical&system=Playstation_3">Playstation_3</a></li>
-<li><a href="index.php?status=OwnedPhysical&system=Playstation_4">Playstation_4</a></li>
-<li><a href="index.php?status=OwnedPhysical&system=Nintendo_Wii_U">Nintendo_Wii_U</a></li>
-<li><a href="index.php?status=OwnedPhysical&system=Nintendo_Wii">Nintendo_Wii</a></li>
-<li><a href="index.php?status=OwnedPhysical&system=Nintendo_3DS">Nintendo_3DS</a></li>
-<li><a href="index.php?status=OwnedPhysical&system=Nintendo_DS">Nintendo_DS</a></li>
-<li><a href="index.php?status=OwnedPhysical&system=Xbox">Xbox</a></li>
+<li><a href="index.php?brandid=<?php echo $brandid; ?>&status=OwnedPhysical">All</a></li>
+<li><a href="index.php?brandid=<?php echo $brandid; ?>&status=OwnedPhysical&system=Playstation_Vita">Playstation_Vita</a></li>
+<li><a href="index.php?brandid=<?php echo $brandid; ?>&status=OwnedPhysical&system=Playstation_3">Playstation_3</a></li>
+<li><a href="index.php?brandid=<?php echo $brandid; ?>&status=OwnedPhysical&system=Playstation_4">Playstation_4</a></li>
+<li><a href="index.php?brandid=<?php echo $brandid; ?>&status=OwnedPhysical&system=Nintendo_Wii_U">Nintendo_Wii_U</a></li>
+<li><a href="index.php?brandid=<?php echo $brandid; ?>&status=OwnedPhysical&system=Nintendo_Wii">Nintendo_Wii</a></li>
+<li><a href="index.php?brandid=<?php echo $brandid; ?>&status=OwnedPhysical&system=Nintendo_3DS">Nintendo_3DS</a></li>
+<li><a href="index.php?brandid=<?php echo $brandid; ?>&status=OwnedPhysical&system=Nintendo_DS">Nintendo_DS</a></li>
+<li><a href="index.php?brandid=<?php echo $brandid; ?>&status=OwnedPhysical&system=Xbox">Xbox</a></li>
 </ul>
 
 
@@ -27,20 +27,20 @@ if($brandname == "1upGuide"){
 <h3>Key Franchises</h3>
 <ul>
 <li>
-	<a href="index.php?franchise=Yoshi">Yoshi</a> |
-	<a href="index.php?franchise=Yoshi&elite=yes">Elite</a>
+	<a href="index.php?brandid=<?php echo $brandid; ?>&franchise=Yoshi">Yoshi</a> |
+	<a href="index.php?brandid=<?php echo $brandid; ?>&franchise=Yoshi&elite=yes">Elite</a>
 </li>
 <li>
-	<a href="index.php?franchise=Kirby">Kirby</a> |
-	<a href="index.php?franchise=Kirby&elite=yes">Elite</a>
+	<a href="index.php?brandid=<?php echo $brandid; ?>&franchise=Kirby">Kirby</a> |
+	<a href="index.php?brandid=<?php echo $brandid; ?>&franchise=Kirby&elite=yes">Elite</a>
 </li>
 <li>
-	<a href="index.php?franchise=Mario_Kart">Mario_Kart</a> |
-	<a href="index.php?franchise=Mario_Kart&elite=yes">Elite</a>
+	<a href="index.php?brandid=<?php echo $brandid; ?>&franchise=Mario_Kart">Mario_Kart</a> |
+	<a href="index.php?brandid=<?php echo $brandid; ?>&franchise=Mario_Kart&elite=yes">Elite</a>
 </li>
 <li>
-	<a href="index.php?franchise=Zelda">Zelda</a> |
-	<a href="index.php?franchise=Zelda&elite=yes">Elite</a>
+	<a href="index.php?brandid=<?php echo $brandid; ?>&franchise=Zelda">Zelda</a> |
+	<a href="index.php?brandid=<?php echo $brandid; ?>&franchise=Zelda&elite=yes">Elite</a>
 </li>
 
 </ul>
@@ -49,8 +49,8 @@ if($brandname == "1upGuide"){
 
 <h3>Elite</h3>
 <ul>
-<li><a href="index.php?elite=yes">All</a></li>
-<li><a href="index.php?eliterank=100">Ranked</a></li>
+<li><a href="index.php?brandid=<?php echo $brandid; ?>&elite=yes">All</a></li>
+<li><a href="index.php?brandid=<?php echo $brandid; ?>&eliterank=100">Ranked</a></li>
 
 
 </ul>
@@ -58,23 +58,61 @@ if($brandname == "1upGuide"){
 
 <h3>Top Devs</h3>
 <ul>
-<li><a href="index.php?developer=Housemarque">Housemarque</a></li>
-<li><a href="index.php?developer=Vanillaware">Vanillaware</a></li>
+<li><a href="index.php?brandid=<?php echo $brandid; ?>&developer=Housemarque">Housemarque</a></li>
+<li><a href="index.php?brandid=<?php echo $brandid; ?>&developer=Vanillaware">Vanillaware</a></li>
 </ul>
 
 
-</div>
 
 <?php
 }
-elseif($brandname == "WJDW"){
+elseif($brandid == 2){
 ?>
 
 
 
 <?php
 }
-elseif($brandname == "Movies"){
+elseif($brandid == 3){
+?>
+
+
+<?php
+}
+elseif($brandid == 2){
+?>
+
+
+
+<?php
+}
+elseif($brandid == 3){
+?>
+
+
+<?php
+}
+elseif($brandid == 2){
+?>
+
+
+
+<?php
+}
+elseif($brandid == 3){
+?>
+
+
+<?php
+}
+elseif($brandid == 2){
+?>
+
+
+
+<?php
+}
+elseif($brandid == 3){
 ?>
 
 
@@ -92,3 +130,5 @@ else{
 ?>
 
 
+
+</div>

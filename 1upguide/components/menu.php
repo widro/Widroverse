@@ -8,14 +8,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><a href="/"><img src="images/NSMBWii1upMushroom.png" style="" height="25" align=left border=0></a>1upGuide</a>
+      <a class="navbar-brand" href="#"><a href="/"><img src="<?php echo $brandlogo; ?>" style="" height="25" align=left border=0></a><?php echo $brandname; ?></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="index.php">Listing</a></li>
 
 
 			<?php
@@ -27,30 +26,27 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="text-transform: capitalize;">'.$type.' <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 					';
-					$parameters = $items->list_parameter("games", $type, 20, $link);
+					$parameters = $items->list_parameter($dbtable, $type, 20, $link);
 					foreach($parameters as $entry){
-						echo "<li><a href=\"index.php?".$type."=".$entry['parameter']."\">".$entry['parameter']." (".$entry['total'].")</a></li>";
+						echo "<li><a href=\"index.php?brandid=". $brandid . "&" .$type."=".$entry['parameter']."\">".$entry['parameter']." (".$entry['total'].")</a></li>";
 					}
 					echo "</ul></li>";
 				}
 			?>
         
-
-
       </ul>
-
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Widroverse Home</a></li>
+        <li><a href="/">Widroverse Home</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="all.php">All</a></li>
-            <li><a href="generic.php">Generic</a></li>
+            <li><a href="/1upguide/index.php?brandid=1">1upGuide</a></li>
+            <li><a href="/1upguide/index.php?brandid=2">Neon Cinema</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Excel Paste</a></li>
-            <li><a href="#">Fix Up Tick Data</a></li>
+            <li><a href="/1upguide/index.php?brandid=3">CDs</a></li>
+            <li><a href="/1upguide/index.php?brandid=4">Books</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Schedule Items</a></li>
+            <li><a href="/1upguide/index.php?brandid=1">1upGuide</a></li>
           </ul>
         </li>
       </ul>

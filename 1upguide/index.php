@@ -7,17 +7,37 @@ if($_GET['setviewstyle']){
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-if($_GET['activebrand']){
-	$activebrand = $_GET['activebrand'];
+if($_GET['brandid']){
+	$brandid = $_GET['brandid'];
+}
+else{
+	$brandid=1;
 }
 
 ////vars
+//brandid = 1
 //games
-$allfields = array('gameid','releasedate','title','system','status','franchise','developer','publisher','genre','boxfront','beaten','currentbacklog','backlog','neon','twodee','retro','neoncade','elite','eliterank','the20v2');
-$dbtable = "games";
-$brandname = "1upGuide";
-$brandlogo = "";
-$menu_types = array('system', 'genre', 'developer', 'publisher', 'franchise', 'status');
+
+if($brandid==1){
+	$allfields = array('gameid','releasedate','title','system','status','franchise','developer','publisher','genre','boxfront','beaten','currentbacklog','backlog','neon','twodee','retro','neoncade','elite','eliterank','the20v2');
+	$dbtable = "games";
+	$brandname = "1upGuide";
+	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
+	$menu_types = array('system', 'genre', 'developer', 'publisher', 'franchise', 'status');
+}
+
+//brandid = 2
+//games
+elseif($brandid==2){
+	$allfields = array('releasedate', 'title', 'status', 'genre', 'boxfront', 'elite', 'ranking');
+	$dbtable = "movies";
+	$brandname = "Neon Cinemas";
+	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
+	$menu_types = array('genre', 'status');
+}
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -29,7 +49,7 @@ include('Items.php');
 ?>
 <html>
 <head>
-<title>1upGuide</title>
+<title><?php echo $brandname; ?></title>
 
 
 <!-- Latest compiled and minified CSS -->
@@ -141,7 +161,7 @@ else{
 
 
 	//show next
-	if($limit==$totalgames){
+	if($limit==$totalitems){
 		$offsetnext = $offset+$limit;
 		echo '
 		<a href="index.php?offset='.$offsetnext.'&limit='.$limit.$queryvars.'">   NEXT   </a>
