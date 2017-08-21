@@ -3,17 +3,37 @@
 error_reporting(E_ALL & ~E_NOTICE);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-if($_GET['activebrand']){
-	$activebrand = $_GET['activebrand'];
+if($_GET['brandid']){
+	$brandid = $_GET['brandid'];
+}
+else{
+	$brandid=1;
 }
 
 ////vars
+//brandid = 1
 //games
-$allfields = array('gameid','releasedate','title','system','status','franchise','developer','publisher','genre','boxfront','beaten','currentbacklog','backlog','neon','twodee','retro','neoncade','elite','eliterank','the20v2');
-$dbtable = "games";
-$brandname = "1upGuide";
-$brandlogo = "";
-$menu_types = array('system', 'genre', 'developer', 'publisher', 'franchise', 'status');
+
+if($brandid==1){
+	$allfields = array('gameid','releasedate','title','system','status','franchise','developer','publisher','genre','boxfront','beaten','currentbacklog','backlog','neon','twodee','retro','neoncade','elite','eliterank','the20v2');
+	$dbtable = "games";
+	$brandname = "1upGuide";
+	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
+	$menu_types = array('system', 'genre', 'developer', 'publisher', 'franchise', 'status');
+}
+
+//brandid = 2
+//movies
+elseif($brandid==2){
+	$allfields = array('movies_id','releasedate', 'title', 'status', 'genre', 'boxfront', 'elite', 'ranking');
+	$dbtable = "movies";
+	$brandname = "Neon Cinemas";
+	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
+	$menu_types = array('genre', 'status');
+}
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -21,7 +41,7 @@ $menu_types = array('system', 'genre', 'developer', 'publisher', 'franchise', 's
 <?php include('Items.php'); ?>
 <html>
 <head>
-<title>1upGuide</title>
+<title><?php echo $brandname; ?></title>
 
 
 <!-- Latest compiled and minified CSS -->
@@ -48,59 +68,35 @@ $menu_types = array('system', 'genre', 'developer', 'publisher', 'franchise', 's
 	<div class="col-lg-10">
 <?php
 
-	$gameid = $_GET['gameid'];
+	$id = $_GET['id'];
 	$items = new Items;
-	$get_item_by_id = $items->get_item_by_id($allfields, $dbtable, $gameid, $link);
+	$get_item_by_id = $items->get_item_by_id($allfields, $dbtable, $id, $link);
 
 
-	$gameid = $get_item_by_id['gameid'];
+	$id = $get_item_by_id['id'];
 	$title = $get_item_by_id['title'];
 	$boxfront = $get_item_by_id['boxfront'];
 	if($boxfront==""){
 		$boxfront = "images/NSMBWii1upMushroom.png";
 	}
 
-	$releasedate = $get_game_by_id['releasedate'];
-	$system = $get_game_by_id['system'];
-	$status = $get_game_by_id['status'];
-	$franchise = $get_game_by_id['franchise'];
-	$developer = $get_game_by_id['developer'];
-	$publisher = $get_game_by_id['publisher'];
-	$genre = $get_game_by_id['genre'];
-	$beaten = $get_game_by_id['beaten'];
-	$currentbacklog = $get_game_by_id['currentbacklog'];
-	$backlog = $get_game_by_id['backlog'];
-	$neon = $get_game_by_id['neon'];
-	$twodee = $get_game_by_id['twodee'];
-	$retro = $get_game_by_id['retro'];
-	$neoncade = $get_game_by_id['neoncade'];
-	$elite = $get_game_by_id['elite'];
-	$eliterank = $get_game_by_id['eliterank'];
-	$the20v2 = $get_game_by_id['the20v2'];
+	$get_item_by_id_output = "";
+	//build select
+	foreach($allfields as $eachfield){
+		$thisvalue = $get_item_by_id[$eachfield];
+		$get_item_by_id_output .= "
+			$eachfield: <a href='index.php?brandid=$brandid&$eachfield=$thisvalue'>$thisvalue</a><br>
+		";
+
+	}
 
 	echo'
 		<h1>'.$title.'</h1>
 		<div class="col-lg-3 col-md-4 col-xs-6 thumb" style="height:350px">
-            <img class="img-responsive quicktickbutton" src="http://widroverse.com/1upguide/'.$boxfront.'" alt="" id="id'.$gameid.'|cat2|level_complete" alt="'.$title.'">
+            <img class="img-responsive quicktickbutton" src="http://widroverse.com/1upguide/'.$boxfront.'" alt="" id="id'.$id.'|cat2|level_complete" alt="'.$title.'">
         </div>
 		<div class="col-lg-9 col-md-8 col-xs-6 thumb" style="height:350px">
-		Release Date: '.$releasedate.'<br>
-		system: <a href="index.php?system='.$system.'">'.$system.'</a><br>
-		status: <a href="index.php?status='.$status.'">'.$status.'</a><br>
-		franchise: <a href="index.php?franchise='.$franchise.'">'.$franchise.'</a><br>
-		developer: <a href="index.php?developer='.$developer.'">'.$developer.'</a><br>
-		publisher: <a href="index.php?publisher='.$publisher.'">'.$publisher.'</a><br>
-		genre: <a href="index.php?genre='.$genre.'">'.$genre.'</a><br>
-		beaten: <a href="index.php?beaten='.$beaten.'">'.$beaten.'</a><br>
-		currentbacklog: <a href="index.php?currentbacklog='.$currentbacklog.'">'.$currentbacklog.'</a><br>
-		backlog: <a href="index.php?backlog='.$backlog.'">'.$backlog.'</a><br>
-		neon: <a href="index.php?neon='.$neon.'">'.$neon.'</a><br>
-		twodee: <a href="index.php?twodee='.$twodee.'">'.$twodee.'</a><br>
-		retro: <a href="index.php?retro='.$retro.'">'.$retro.'</a><br>
-		neoncade: <a href="index.php?neoncade='.$neoncade.'">'.$neoncade.'</a><br>
-		elite: <a href="index.php?elite='.$elite.'">'.$elite.'</a><br>
-		eliterank: <a href="index.php?eliterank='.$eliterank.'">'.$eliterank.'</a><br>
-		the20v2: <a href="index.php?the20v2='.$the20v2.'">'.$the20v2.'</a><br>
+		'.$get_item_by_id_output.'
 
 
 

@@ -4,7 +4,7 @@ include('config/dbconnect.php');
 
 class Items{
 
-	function list_items($allfields, $dbtable, $params, $limit, $offset, $link){
+	function list_items($allfields, $dbtable, $params, $limit, $offset, $link, $sortby){
 
 		//declare some vars
 		$sqladd = "";
@@ -28,13 +28,13 @@ class Items{
 
 		$today = date("Y-m-d");
 
+		//and releasedate <= '".$today."'
 		$sql = "
 		$selectlist
 		FROM ".$dbtable."
 		where 1 = 1
 		$sqladd
-		and releasedate <= '".$today."'
-		order by releasedate DESC
+		order by $sortby
 		limit $limit offset $offset
 		";
 

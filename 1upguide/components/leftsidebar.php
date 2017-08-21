@@ -1,7 +1,7 @@
 	<div class="col-lg-2" style="background:#cccccc;">
 View style: <br>
-<a href="index.php?setviewstyle=grid">Grid</a> | 
-<a href="index.php?setviewstyle=basiclist">Basic List</a> | 
+<a href="index.php?brandid=<?php echo $brandid; ?>&setviewstyle=grid">Grid</a> | 
+<a href="index.php?brandid=<?php echo $brandid; ?>&setviewstyle=basiclist">Basic List</a> | 
  <br> <br>
 
 <?php

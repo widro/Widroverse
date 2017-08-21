@@ -24,16 +24,18 @@ if($brandid==1){
 	$brandname = "1upGuide";
 	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
 	$menu_types = array('system', 'genre', 'developer', 'publisher', 'franchise', 'status');
+	$sortby = "releasedate DESC";
 }
 
 //brandid = 2
 //games
 elseif($brandid==2){
-	$allfields = array('releasedate', 'title', 'status', 'genre', 'boxfront', 'elite', 'ranking');
+	$allfields = array('movies_id','releasedate', 'title', 'status', 'genre', 'boxfront', 'elite', 'ranking');
 	$dbtable = "movies";
 	$brandname = "Neon Cinemas";
 	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
 	$menu_types = array('genre', 'status');
+	$sortby = "releasedate DESC";
 }
 
 
@@ -121,11 +123,11 @@ else{
 
 
 	$items = new Items;
-	$allitems = $items->list_items($allfields, $dbtable, $params, $limit, $offset, $link);
+	$allitems = $items->list_items($allfields, $dbtable, $params, $limit, $offset, $link, $sortby);
 	$totalitems = count($allitems);
 
 	foreach($allitems as $thisitem){
-		$gameid = $thisitem['gameid'];
+		$id = $thisitem[$allfields[0]];
 		$title = $thisitem['title'];
 		$boxfront = $thisitem['boxfront'];
 		if($boxfront==""){
@@ -134,8 +136,8 @@ else{
 		if($viewstyle == "grid"){
 		echo'
 			<div class="col-lg-3 col-md-4 col-xs-6 thumb" style="height:350px">
-                <a class="thumbnail" href="view.php?gameid='.$gameid.'">
-                    <img class="img-responsive quicktickbutton" src="http://widroverse.com/1upguide/'.$boxfront.'" alt="" id="id'.$gameid.'|cat2|level_complete" alt="'.$title.'">
+                <a class="thumbnail" href="view.php?brandid='.$brandid.'&id='.$id.'">
+                    <img class="img-responsive quicktickbutton" src="http://widroverse.com/1upguide/'.$boxfront.'" alt="" id="id'.$id.'|cat2|level_complete" alt="'.$title.'">
                     <br>
                     '.$title.'
                 </a>
@@ -146,7 +148,7 @@ else{
 		elseif($viewstyle == "basiclist"){
 		echo'
 			<div class="col-lg-12 col-md-12 col-xs-12">
-                <a href="view.php?gameid='.$gameid.'">
+                <a href="view.php?id='.$id.'">
                     '.$title.'
                 </a>
             </div>
