@@ -7,19 +7,19 @@ if($_GET['setviewstyle']){
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-if($_GET['brandid']){
-	$brandid = $_GET['brandid'];
+if($_GET['brands_id']){
+	$brands_id = $_GET['brands_id'];
 }
 else{
-	$brandid=1;
+	$brands_id=1;
 }
 
 ////vars
-//brandid = 1
+//brands_id = 1
 //games
 
-if($brandid==1){
-	$allfields = array('gameid','releasedate','title','system','status','franchise','developer','publisher','genre','boxfront','beaten','currentbacklog','backlog','neon','twodee','retro','neoncade','elite','eliterank','the20v2');
+if($brands_id==1){
+	$allfields = array('gameid','releasedate','title','system','status','franchise','developer','publisher','genre','boxfront','beaten','currentbacklog','backlog','neon','twodee','retro','neoncade','elite','eliterank','beatendate');
 	$dbtable = "games";
 	$brandname = "1upGuide";
 	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
@@ -27,14 +27,44 @@ if($brandid==1){
 	$sortby = "releasedate DESC";
 }
 
-//brandid = 2
-//games
-elseif($brandid==2){
-	$allfields = array('movies_id','releasedate', 'title', 'status', 'genre', 'boxfront', 'elite', 'ranking');
+//brands_id = 2
+//movies
+elseif($brands_id==2){
+	$allfields = array('movies_id','releasedate', 'title', 'status', 'genre', 'boxfront', 'elite', 'ranking', 'lastseen' ,'lastseendate');
 	$dbtable = "movies";
 	$brandname = "Neon Cinemas";
 	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
-	$menu_types = array('genre', 'status');
+	$menu_types = array('genre', 'lastseen', 'status');
+	$sortby = "releasedate DESC";
+}
+//brands_id = 3
+//books
+elseif($brands_id==3){
+	$allfields = array('books_id','releasedate', 'title', 'author', 'status', 'genre','franchise', 'boxfront', 'elite', 'ranking');
+	$dbtable = "books";
+	$brandname = "Widroverse Books";
+	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
+	$menu_types = array('author', 'genre', 'franchise', 'status');
+	$sortby = "releasedate DESC";
+}
+//brands_id = 4
+//albums
+elseif($brands_id==4){
+	$allfields = array('albums_id','releasedate', 'band', 'title', 'status', 'genre', 'franchise', 'boxfront', 'elite', 'ranking');
+	$dbtable = "albums";
+	$brandname = "WJDW Albums";
+	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
+	$menu_types = array('band', 'status', 'genre', 'franchise', 'category', 'subcategory', 'brand');
+	$sortby = "releasedate DESC";
+}
+//brands_id = 7
+//skus
+elseif($brands_id==7){
+	$allfields = array('skus_id','releasedate', 'title', 'status', 'genre', 'franchise', 'category', 'subcategory', 'brand', 'boxfront', 'elite', 'ranking');
+	$dbtable = "skus";
+	$brandname = "Widroverse Inventory";
+	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
+	$menu_types = array('status', 'genre', 'franchise', 'category', 'subcategory', 'brand');
 	$sortby = "releasedate DESC";
 }
 
@@ -136,7 +166,7 @@ else{
 		if($viewstyle == "grid"){
 		echo'
 			<div class="col-lg-3 col-md-4 col-xs-6 thumb" style="height:350px">
-                <a class="thumbnail" href="view.php?brandid='.$brandid.'&id='.$id.'">
+                <a class="thumbnail" href="view.php?brands_id='.$brands_id.'&id='.$id.'">
                     <img class="img-responsive quicktickbutton" src="http://widroverse.com/1upguide/'.$boxfront.'" alt="" id="id'.$id.'|cat2|level_complete" alt="'.$title.'">
                     <br>
                     '.$title.'

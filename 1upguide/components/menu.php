@@ -28,7 +28,7 @@
 					';
 					$parameters = $items->list_parameter($dbtable, $type, 20, $link);
 					foreach($parameters as $entry){
-						echo "<li><a href=\"index.php?brandid=". $brandid . "&" .$type."=".$entry['parameter']."\">".$entry['parameter']." (".$entry['total'].")</a></li>";
+						echo "<li><a href=\"index.php?brands_id=". $brands_id . "&" .$type."=".$entry['parameter']."\">".$entry['parameter']." (".$entry['total'].")</a></li>";
 					}
 					echo "</ul></li>";
 				}
@@ -40,13 +40,14 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/1upguide/index.php?brandid=1">1upGuide</a></li>
-            <li><a href="/1upguide/index.php?brandid=2">Neon Cinema</a></li>
+          <?php
+          $parameters = $items->list_parameter('brands', 'brands_id', 20, $link);
+          foreach($parameters as $entry){
+            echo "<li><a href=\"index.php?brands_id=". $brands_id . "&" .$type."=".$entry['parameter']."\">".$entry['parameter']." (".$entry['total'].")</a></li>";
+          }
+          ?>
             <li role="separator" class="divider"></li>
-            <li><a href="/1upguide/index.php?brandid=3">CDs</a></li>
-            <li><a href="/1upguide/index.php?brandid=4">Books</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="/1upguide/index.php?brandid=1">1upGuide</a></li>
+            <li><a href="/1upguide/index.php?brands_id=1">1upGuide</a></li>
           </ul>
         </li>
       </ul>

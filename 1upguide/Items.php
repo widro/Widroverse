@@ -21,7 +21,12 @@ class Items{
 		//build sql
 		if(count($params)>0){
 			foreach($params as $params_key => $params_value){
-				$sqladd .= "and " . $params_key . " = '".$params_value."'";
+				if($params_value=="showanyvalue"){
+					$sqladd .= "and " . $params_key . " != ''";
+				}
+				else{
+					$sqladd .= "and " . $params_key . " = '".$params_value."'";
+				}
 			}
 		}
 
