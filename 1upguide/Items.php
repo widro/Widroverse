@@ -59,6 +59,35 @@ class Items{
 		return $all;
 	}
 
+	function list_titles($dbtable, $limit, $link){
+
+
+		$output = array();
+
+		if(!$limit){
+			$limit = "10";
+		}
+
+		$idtoquery = $dbtable . "_id";
+
+		$sql = "
+		SELECT $idtoquery as id, title
+		FROM $dbtable
+		ORDER by title ASC
+		limit $limit
+		";
+
+		$result = mysqli_query($link, $sql);
+
+		while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+			$entry[] = array();
+			$entry['id'] = $row['id'];
+			$entry['title'] = $row['title'];
+			$output[] =$entry;
+		}
+
+		return $output;
+	}
 	function list_parameter($dbtable, $parameter, $limit, $link){
 
 

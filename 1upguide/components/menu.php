@@ -26,9 +26,9 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="text-transform: capitalize;">'.$type.' <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 					';
-					$parameters = $items->list_parameter($dbtable, $type, 20, $link);
+          $parameters = $items->list_titles('brands', 20, $link);
 					foreach($parameters as $entry){
-						echo "<li><a href=\"index.php?brands_id=". $brands_id . "&" .$type."=".$entry['parameter']."\">".$entry['parameter']." (".$entry['total'].")</a></li>";
+						echo "<li><a href=\"index.php?brands_id=". $entry['id']."\">".$entry['title']."</a></li>";
 					}
 					echo "</ul></li>";
 				}
@@ -41,9 +41,9 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span class="caret"></span></a>
           <ul class="dropdown-menu">
           <?php
-          $parameters = $items->list_parameter('brands', 'brands_id', 20, $link);
+          $parameters = $items->list_titles('brands', 20, $link);
           foreach($parameters as $entry){
-            echo "<li><a href=\"index.php?brands_id=". $brands_id . "&" .$type."=".$entry['parameter']."\">".$entry['parameter']." (".$entry['total'].")</a></li>";
+            echo "<li><a href=\"index.php?brands_id=". $entry['id']."\">".$entry['title']."</a></li>";
           }
           ?>
             <li role="separator" class="divider"></li>

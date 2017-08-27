@@ -67,6 +67,16 @@ elseif($brands_id==7){
 	$menu_types = array('status', 'genre', 'franchise', 'category', 'subcategory', 'brand');
 	$sortby = "releasedate DESC";
 }
+//brands_id = 11
+//skus
+elseif($brands_id==11){
+	$allfields = array('characters_id','releasedate', 'title', 'status', 'genre', 'franchise', 'boxfront', 'elite', 'ranking');
+	$dbtable = "characters";
+	$brandname = "Widroverse Inventory";
+	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
+	$menu_types = array('status', 'genre', 'franchise');
+	$sortby = "releasedate DESC";
+}
 
 
 
