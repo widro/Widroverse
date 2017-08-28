@@ -24,7 +24,7 @@ $brandinfo = $items->get_item_by_id($brandsfields, "brands", $brands_id, $link);
 $brandname = $brandinfo['title'];
 $brandlogo = $brandinfo['boxfront'];
 $dbtable = $brandinfo['status'];
-
+$favicon = $brandinfo['favicon'];
 $allfields = $items->get_table_fields($dbtable, $link2);
 
 
@@ -47,7 +47,7 @@ $allfields = $items->get_table_fields($dbtable, $link2);
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<link rel="shortcut icon" href="/1upguide/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortcut icon" href="" type="image/vnd.microsoft.icon" />
 
 </head>
 

@@ -19,7 +19,7 @@
 
 			<?php
         $items = new Items;
-        $menu_types = array('author', 'system', 'band', 'status', 'genre', 'franchise', 'category', 'subcategory', 'brand', 'developer', 'publisher');
+        $menu_types = array('author', 'system', 'band', 'status', 'genre', 'franchise', 'category', 'subcategory', 'brand', 'developer', 'publisher', 'location', 'season');
 
 				foreach($menu_types as $type){
           $parameters = $items->list_parameter($dbtable, $type, 20, $link);
