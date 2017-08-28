@@ -19,18 +19,21 @@
 
 			<?php
         $items = new Items;
+        $menu_types = array('author', 'system', 'band', 'status', 'genre', 'franchise', 'category', 'subcategory', 'brand', 'developer', 'publisher');
 
 				foreach($menu_types as $type){
-					echo '
-			        <li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="text-transform: capitalize;">'.$type.' <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-					';
-          $parameters = $items->list_titles('brands', 20, $link);
-					foreach($parameters as $entry){
-						echo "<li><a href=\"index.php?brands_id=". $entry['id']."\">".$entry['title']."</a></li>";
-					}
-					echo "</ul></li>";
+          $parameters = $items->list_parameter($dbtable, $type, 20, $link);
+          if(count($parameters)>0){
+  					echo '
+  			        <li class="dropdown">
+  					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="text-transform: capitalize;">'.$type.' <span class="caret"></span></a>
+  					<ul class="dropdown-menu">
+  					';
+  					foreach($parameters as $entry){
+  						echo "<li><a href=\"index.php?brands_id=". $brands_id . "&" .$type."=".$entry['parameter']."\">".$entry['parameter']." (".$entry['total'].")</a></li>";
+  					}
+  					echo "</ul></li>";
+          }
 				}
 			?>
         

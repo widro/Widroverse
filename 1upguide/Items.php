@@ -33,6 +33,10 @@ class Items{
 
 		$today = date("Y-m-d");
 
+		if($sortby==""){
+			$sortby = $allfields[1] . " DESC";
+		}
+
 		//and releasedate <= '".$today."'
 		$sql = "
 		$selectlist
@@ -111,11 +115,13 @@ class Items{
 
 		$result = mysqli_query($link, $sql);
 
-		while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
-			$entry[] = array();
-			$entry['parameter'] = $row[$parameter];
-			$entry['total'] = $row['total'];
-			$output[] =$entry;
+		if($result){
+			while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+				$entry[] = array();
+				$entry['parameter'] = $row[$parameter];
+				$entry['total'] = $row['total'];
+				$output[] =$entry;
+			}
 		}
 
 		return $output;
@@ -146,6 +152,23 @@ class Items{
 				$$thisfield = $row[$thisfield];
 				$return[$thisfield] = $$thisfield;
 			}
+		}
+
+		return $return;
+	}
+
+	function get_table_fields($dbtable, $link2){
+		$sql = "
+		select column_name from columns
+		where table_schema = 'widroverse'
+		and table_name = '$dbtable'
+		order by ordinal_position,table_name
+		";
+
+		$result = mysqli_query($link2, $sql);
+
+		while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+			$return[] = $row['column_name'];
 		}
 
 		return $return;

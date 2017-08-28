@@ -14,80 +14,25 @@ else{
 	$brands_id=1;
 }
 
-////vars
-//brands_id = 1
-//games
 
-if($brands_id==1){
-	$allfields = array('gameid','releasedate','title','system','status','franchise','developer','publisher','genre','boxfront','beaten','currentbacklog','backlog','neon','twodee','retro','neoncade','elite','eliterank','beatendate');
-	$dbtable = "games";
-	$brandname = "1upGuide";
-	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
-	$menu_types = array('system', 'genre', 'developer', 'publisher', 'franchise', 'status');
-	$sortby = "releasedate DESC";
-}
+include('config/dbconnect.php');
+include('Items.php'); 
 
-//brands_id = 2
-//movies
-elseif($brands_id==2){
-	$allfields = array('movies_id','releasedate', 'title', 'status', 'genre', 'boxfront', 'elite', 'ranking', 'lastseen' ,'lastseendate');
-	$dbtable = "movies";
-	$brandname = "Neon Cinemas";
-	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
-	$menu_types = array('genre', 'lastseen', 'status');
-	$sortby = "releasedate DESC";
-}
-//brands_id = 3
-//books
-elseif($brands_id==3){
-	$allfields = array('books_id','releasedate', 'title', 'author', 'status', 'genre','franchise', 'boxfront', 'elite', 'ranking');
-	$dbtable = "books";
-	$brandname = "Widroverse Books";
-	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
-	$menu_types = array('author', 'genre', 'franchise', 'status');
-	$sortby = "releasedate DESC";
-}
-//brands_id = 4
-//albums
-elseif($brands_id==4){
-	$allfields = array('albums_id','releasedate', 'band', 'title', 'status', 'genre', 'franchise', 'boxfront', 'elite', 'ranking');
-	$dbtable = "albums";
-	$brandname = "WJDW Albums";
-	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
-	$menu_types = array('band', 'status', 'genre', 'franchise', 'category', 'subcategory', 'brand');
-	$sortby = "releasedate DESC";
-}
-//brands_id = 7
-//skus
-elseif($brands_id==7){
-	$allfields = array('skus_id','releasedate', 'title', 'status', 'genre', 'franchise', 'category', 'subcategory', 'brand', 'boxfront', 'elite', 'ranking');
-	$dbtable = "skus";
-	$brandname = "Widroverse Inventory";
-	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
-	$menu_types = array('status', 'genre', 'franchise', 'category', 'subcategory', 'brand');
-	$sortby = "releasedate DESC";
-}
-//brands_id = 11
-//skus
-elseif($brands_id==11){
-	$allfields = array('characters_id','releasedate', 'title', 'status', 'genre', 'franchise', 'boxfront', 'elite', 'ranking');
-	$dbtable = "characters";
-	$brandname = "Widroverse Inventory";
-	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
-	$menu_types = array('status', 'genre', 'franchise');
-	$sortby = "releasedate DESC";
-}
+//brand info
+$brandsfields = array('brands_id','releasedate', 'title', 'status', 'boxfront', 'elite', 'ranking');
 
+$items = new Items;
+$brandinfo = $items->get_item_by_id($brandsfields, "brands", $brands_id, $link);
+
+$brandname = $brandinfo['title'];
+$brandlogo = $brandinfo['boxfront'];
+$dbtable = $brandinfo['status'];
+
+$allfields = $items->get_table_fields($dbtable, $link2);
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-?>
-<?php 
-include('config/dbconnect.php');
-include('Items.php'); 
 ?>
 <html>
 <head>

@@ -64,13 +64,33 @@ elseif($brands_id==7){
 	$sortby = "releasedate DESC";
 }
 //brands_id = 11
-//skus
+//characters
 elseif($brands_id==11){
 	$allfields = array('characters_id','releasedate', 'title', 'status', 'genre', 'franchise', 'boxfront', 'elite', 'ranking');
 	$dbtable = "characters";
 	$brandname = "Widroverse Inventory";
 	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
 	$menu_types = array('status', 'genre', 'franchise');
+	$sortby = "releasedate DESC";
+}
+//brands_id = 12
+//techskus
+elseif($brands_id==12){
+	$allfields = array('techskus_id','releasedate', 'title', 'status', 'genre', 'franchise', 'category', 'subcategory', 'brand', 'boxfront', 'elite', 'ranking');
+	$dbtable = "techskus";
+	$brandname = "Tech";
+	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
+	$menu_types = array('status', 'genre', 'franchise', 'category', 'subcategory', 'brand');
+	$sortby = "releasedate DESC";
+}
+//brands_id = 13
+//foods
+elseif($brands_id==13){
+	$allfields = array('foods_id','releasedate', 'title', 'status', 'genre', 'franchise', 'category', 'subcategory', 'brand', 'boxfront', 'elite', 'ranking');
+	$dbtable = "foods";
+	$brandname = "foods";
+	$brandlogo = "http://widroverse.com/1upguide/images/NSMBWii1upMushroom.png";
+	$menu_types = array('status', 'genre', 'franchise', 'category', 'subcategory', 'brand');
 	$sortby = "releasedate DESC";
 }
 
