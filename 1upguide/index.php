@@ -7,18 +7,15 @@ if($_GET['setviewstyle']){
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-if($_GET['brands_id']){
-	$brands_id = $_GET['brands_id'];
-}
-else{
-	$brands_id=1;
-}
-
-
 include('config/dbconnect.php');
 include('Items.php'); 
 
 //brand info
+$brands_id=1;
+if($_GET['brands_id']){
+	$brands_id = $_GET['brands_id'];
+}
+
 $brandsfields = array('brands_id','releasedate', 'title', 'status', 'boxfront', 'elite', 'ranking');
 
 $items = new Items;
