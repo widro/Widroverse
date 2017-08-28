@@ -25,7 +25,7 @@ $brandname = $brandinfo['title'];
 $brandlogo = $brandinfo['boxfront'];
 $dbtable = $brandinfo['status'];
 $favicon = $brandinfo['favicon'];
-$allfields = $items->get_table_fields($dbtable, $link2);
+$allfields = $items->get_table_fields($dbtable, $link2, $dbname1);
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

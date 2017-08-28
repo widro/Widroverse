@@ -157,10 +157,10 @@ class Items{
 		return $return;
 	}
 
-	function get_table_fields($dbtable, $link2){
+	function get_table_fields($dbtable, $link2, $dbname1){
 		$sql = "
 		select column_name from columns
-		where table_schema = 'widroverse'
+		where table_schema = '$dbname1'
 		and table_name = '$dbtable'
 		order by ordinal_position,table_name
 		";
