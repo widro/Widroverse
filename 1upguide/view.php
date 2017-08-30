@@ -20,13 +20,11 @@ $brandinfo = $items->get_item_by_id($brandsfields, "brands", $brands_id, $link);
 $brandname = $brandinfo['title'];
 $brandlogo = $brandinfo['boxfront'];
 $dbtable = $brandinfo['status'];
-
-$allfields = $items->get_table_fields($dbtable, $link2);
+$favicon = $brandinfo['favicon'];
+$allfields = $items->get_table_fields($dbtable, $link2, $dbname1);
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 ?>
 <html>
