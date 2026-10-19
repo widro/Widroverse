@@ -1,10 +1,10 @@
 <?
 $thisurl =  $_SERVER['HTTP_HOST'];
 if(($thisurl=="www.widroverse.com")||($thisurl=="widroverse.com")){
-	$link = mysqli_connect("internal-db.s214582.gridserver.com", "db214582", "_r6eM7R-td", "db214582_widroverse");
+	$link = mysqli_connect("mysql.widroverse.com", "widroverse", "X3wmxMxgfFWWkk}", "widroverse");
 }
 else{
-	$link = mysqli_connect("localhost", "root", "", "1upguide");
+	$link = mysqli_connect("mysql.widroverse.com", "widroverse", "X3wmxMxgfFWWkk}", "widroverse");
 }
 
 if($_GET['b']){

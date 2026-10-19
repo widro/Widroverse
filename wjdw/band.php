@@ -2,10 +2,10 @@
 $thisurl =  $_SERVER['HTTP_HOST'];
 
 if(($thisurl=="www.widroverse.com")||($thisurl=="widroverse.com")){
-	$link = mysqli_connect("internal-db.s214582.gridserver.com", "db214582", "_r6eM7R-td", "db214582_widroverse");
+	$link = mysqli_connect("mysql.widroverse.com", "widroverse", "X3wmxMxgfFWWkk}", "widroverse");
 }
 else{
-	$link = mysqli_connect("localhost", "root", "", "1upguide");
+	$link = mysqli_connect("mysql.widroverse.com", "widroverse", "X3wmxMxgfFWWkk}", "widroverse");
 }
 
 
@@ -86,6 +86,51 @@ $i++;
 
 
 
+// output playlists
+$sqlbestof = "
+SELECT `rank`, `songtitle`, `edition` FROM `bestof` WHERE `artist` LIKE '$b' 
+";
+
+$resultbestof = mysqli_query($link, $sqlbestof);
+$i=0;
+
+while($rowbestof = mysqli_fetch_array($resultbestof)){
+
+$rank = $rowbestof['rank'];
+$songtitle = $rowbestof['songtitle'];
+$edition = $rowbestof['edition'];
+
+
+
+if($i%2==0){
+$displayblock2 .= "
+
+<tr>
+<td bgcolor=333333 valign=top>$edition</td>
+<td bgcolor=333333 valign=top>$rank</td>
+<td bgcolor=333333 valign=top>$songtitle</td>
+</tr>
+
+";
+}
+else{
+$displayblock2 .= "
+
+<tr>
+<td bgcolor=666666 valign=top>$edition</td>
+<td bgcolor=666666 valign=top>$rank</td>
+<td bgcolor=666666 valign=top>$songtitle</td>
+</tr>
+
+";
+}
+
+
+$i++;
+}
+
+
+
 
 
 
@@ -111,7 +156,19 @@ $i++;
 <?=$displayblock?>
 </table>
 
-
+<?php if($displayblock2){ ?>
+<table width=600 cellpadding=25>
+<h1>Best Of</h1>
+<br>
+<table width=600 cellpadding=5>
+<tr>
+<td valign=top>Edition</td>
+<td valign=top>Rank</td>
+<td valign=top>Track</td>
+</tr>
+<? echo $displayblock2; ?>
+</table>
+<?php } ?>
 
 
 

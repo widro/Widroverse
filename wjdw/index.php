@@ -4,17 +4,18 @@ error_reporting(E_ALL & ~E_NOTICE);
 $thisurl =  $_SERVER['HTTP_HOST'];
 
 if(($thisurl=="www.widroverse.com")||($thisurl=="widroverse.com")){
-	$link = mysqli_connect("internal-db.s214582.gridserver.com", "db214582", "_r6eM7R-td", "db214582_widroverse");
+	$link = mysqli_connect("mysql.widroverse.com", "widroverse", "X3wmxMxgfFWWkk}", "widroverse");
 }
 else{
-	$link = mysqli_connect("localhost", "root", "", "widroverse");
+	$link = mysqli_connect("mysql.widroverse.com", "widroverse", "X3wmxMxgfFWWkk}", "widroverse");
 }
 
 if($_GET['year']){
 	$year = $_GET['year'];
 }
 else{
-	$year = "2017";
+	$year = date("Y");
+	//$year = "2022";
 }
 
 if($_GET['active']){
@@ -34,17 +35,13 @@ ORDER BY date DESC
 ";
 
 $resultmix = mysqli_query($link, $sqlmix);
-$i=0;
 
 while($rowmix1 = mysqli_fetch_array($resultmix)){
-	$rowmix[$i]=$rowmix1['mix1'];
-	$i++;
+	$rowmix[]=$rowmix1['mix1'];
 }
-
+if($rowmix){
 $totalmixes = count($rowmix);
-
-
-
+}
 
 
 
@@ -52,7 +49,7 @@ $totalmixes = count($rowmix);
 $sqlplaylists = "
 SELECT id , track , mix , band , song , type , date , volume, active
 FROM playlists
-WHERE active = $active
+WHERE active = '$active'
 AND date LIKE '$year%'
 ORDER BY date DESC, track
 ";
